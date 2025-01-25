@@ -24,6 +24,7 @@ import {
     FormLabel,
     FormMessage
 } from "@/components/ui/form"
+import { toast } from "sonner"
 import { signupWithEmail } from "../viewModel/signupViewModel"
 
 
@@ -53,31 +54,29 @@ export function SignUpForm({
 
     const form = useForm<SignInFormValues>({
         resolver: zodResolver(signinFormSchema),
-    })
+    });
 
-    const onSubmit = async (data: SignInFormValues) => {
+    const onSubmit = async (values: SignInFormValues) => {
         try {
-            console.log(data);
-            // toast(
-            //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-            //         <code className="text-white">{JSON.stringify(values, null, 2)}</code>
-            //     </pre>
-            // );
+            console.log(values);
+            toast(
+                <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+                    <code className="text-white">{JSON.stringify(values, null, 2)}</code>
+                </pre>
+            );
 
-            const signupResult = await signupWithEmail(data.email, data.password);
+            const signupResult = await signupWithEmail(values.email, values.password);
             if (!signupResult.isSuccessful) {
-                // setError(signupResult.error);
                 console.error("Signup error", signupResult.error);
                 return;
             } else {
-                // setError(null);
                 console.log("Signup successful", signupResult.data);
                 router.push("/login");
             }
 
         } catch (error) {
             console.error("Form submission error", error);
-            // toast.error("Failed to submit the form. Please try again.");
+            toast.error("Failed to submit the form. Please try again.");
         }
     };
 
