@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+// Supabase
+import { createClient } from '@supabase/supabase-js'
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -16,3 +18,16 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const analytics = getAnalytics(app);
+
+
+
+// Supabse Client
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+if (!supabaseKey) {
+  throw new Error("Missing Supabase key");
+};
+if (!supabaseUrl) {
+  throw new Error("Missing supabaseUrl");
+}
+export const supabase = createClient(supabaseUrl, supabaseKey);

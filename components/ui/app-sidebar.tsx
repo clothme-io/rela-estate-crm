@@ -10,7 +10,7 @@ import {
     GalleryVerticalEnd,
     Map,
     PieChart,
-    Settings2,
+    // Settings2,
     SquareTerminal,
 } from "lucide-react"
 import { TeamSwitcher } from "./team-switcher"
@@ -68,24 +68,59 @@ const data = {
             ],
         },
         // {
-        //     title: "Models",
+        //     title: "CRM",
         //     url: "#",
-        //     icon: Bot,
+        //     icon: Settings2,
         //     items: [
-        //         {
-        //             title: "Genesis",
-        //             url: "#",
-        //         },
-        //         {
-        //             title: "Explorer",
-        //             url: "#",
-        //         },
-        //         {
-        //             title: "Quantum",
-        //             url: "#",
-        //         },
+        //     {
+        //         title: "General",
+        //         url: "#",
+        //     },
+        //     {
+        //         title: "Team",
+        //         url: "#",
+        //     },
+        //     {
+        //         title: "Billing",
+        //         url: "#",
+        //     },
+        //     {
+        //         title: "Limits",
+        //         url: "#",
+        //     },
         //     ],
         // },
+    ],
+    projects: [
+        {
+            name: "Budget",
+            url: "#",
+            icon: Frame,
+            items: []
+        },
+        {
+            name: "Schedule",
+            url: "#",
+            icon: PieChart,
+            items: []
+        },
+        {
+            name: "Accounting",
+            url: "#",
+            icon: Map,
+            items: []
+        },
+        {
+            name: "Mail",
+            url: "#",
+            icon: Map,
+            items: []
+        },
+    ],
+}
+
+const dataResource = {
+    nav: [
         {
             title: "Education",
             url: "#",
@@ -109,50 +144,7 @@ const data = {
                 },
             ],
         },
-        {
-            title: "Settings",
-            url: "#",
-            icon: Settings2,
-            items: [
-                //     {
-                //         title: "General",
-                //         url: "#",
-                //     },
-                //     {
-                //         title: "Team",
-                //         url: "#",
-                //     },
-                //     {
-                //         title: "Billing",
-                //         url: "#",
-                //     },
-                //     {
-                //         title: "Limits",
-                //         url: "#",
-                //     },
-            ],
-        },
-    ],
-    projects: [
-        {
-            name: "Design Engineering",
-            url: "#",
-            icon: Frame,
-            items: []
-        },
-        {
-            name: "Sales & Marketing",
-            url: "#",
-            icon: PieChart,
-            items: []
-        },
-        {
-            name: "Travel",
-            url: "#",
-            icon: Map,
-            items: []
-        },
-    ],
+    ]
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -165,7 +157,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <NavMain items={data.navMain} />
                 <NavProjects projects={data.projects} />
                 <div className="">
-                    <NavResources projects={data.projects} />
+                    <NavResources items={dataResource.nav} />
                 </div>
             </SidebarContent>
             {/* <SidebarFooter> */}
