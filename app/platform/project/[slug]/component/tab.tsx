@@ -27,7 +27,7 @@ export function DashboardTabs() {
 
     return (
         <div className="flex flex-col w-full">
-            <nav className="flex items-center gap-4 p-4 border-b bg-white">
+            <nav className="flex items-center gap-4 py-4 border-b bg-white">
                 {/* Due Diligence */}
                 <Button
                     variant="ghost"
@@ -99,7 +99,7 @@ export function DashboardTabs() {
             </nav>
 
             {/* Content area - can be populated based on selected tab */}
-            <div className="p-6">
+            <div className="">
                 {activeTab === 'due-diligence' && <LandDueDiligence />}
                 {activeTab === 'under-writing' && <UnderWritingComponent />}
                 {activeTab === 'budget' && <div>Budget Content</div>}
