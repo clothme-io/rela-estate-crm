@@ -62,9 +62,9 @@ export default function SoftCostComponent() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10 pb-32">
 
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
@@ -134,7 +134,7 @@ export default function SoftCostComponent() {
 
                 </div>
 
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
@@ -204,7 +204,7 @@ export default function SoftCostComponent() {
 
                 </div>
 
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
@@ -274,7 +274,7 @@ export default function SoftCostComponent() {
 
                 </div>
 
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 

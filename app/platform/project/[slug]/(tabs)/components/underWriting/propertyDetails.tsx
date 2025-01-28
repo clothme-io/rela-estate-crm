@@ -58,7 +58,7 @@ export default function PropertyDetailComponent() {
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
@@ -128,7 +128,7 @@ export default function PropertyDetailComponent() {
 
                 </div>
 
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 

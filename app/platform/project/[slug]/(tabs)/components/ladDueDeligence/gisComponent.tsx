@@ -1,7 +1,6 @@
 "use client"
-// import {
-//   useState
-// } from "react"
+
+
 import {
     toast
 } from "sonner"
@@ -12,9 +11,6 @@ import {
     zodResolver
 } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import {
-    Button
-} from "@/components/ui/button"
 import {
     Form,
     FormControl,
@@ -27,12 +23,17 @@ import {
 import {
     Input
 } from "@/components/ui/input"
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue
+} from "@/components/ui/select"
 
 const formSchema = z.object({
-    name_3573586598: z.string(),
-    name_5110087407: z.string(),
-    name_2461518453: z.string(),
-    name_6044664223: z.string()
+    name_4576612855: z.string(),
+    name_7543640866: z.string()
 });
 
 export default function GISComponent() {
@@ -66,7 +67,7 @@ export default function GISComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_3573586598"
+                            name="name_4576612855"
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Username</FormLabel>
@@ -83,75 +84,28 @@ export default function GISComponent() {
                             )}
                         />
                     </div>
-
-                </div>
-
-                <div className="grid grid-cols-12 gap-4">
-
-                    <div className="col-span-6">
-
-                        <FormField
-                            control={form.control}
-                            name="name_5110087407"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Username</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="shadcn"
-
-                                            type=""
-                                            {...field} />
-                                    </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                    <div className="col-span-6">
-
-                        <FormField
-                            control={form.control}
-                            name="name_2461518453"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Username</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="shadcn"
-
-                                            type=""
-                                            {...field} />
-                                    </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                </div>
-
-                <div className="grid grid-cols-12 gap-4">
 
                     <div className="col-span-4">
 
                         <FormField
                             control={form.control}
-                            name="name_6044664223"
+                            name="name_7543640866"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="shadcn"
-
-                                            type=""
-                                            {...field} />
-                                    </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
+                                    <FormLabel>Email</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select a verified email to display" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
+                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
+                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -159,7 +113,6 @@ export default function GISComponent() {
                     </div>
 
                 </div>
-                <Button type="submit">Submit</Button>
             </form>
         </Form>
     )
