@@ -12,9 +12,6 @@ import {
 } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import {
-    Button
-} from "@/components/ui/button"
-import {
     Form,
     FormControl,
     FormDescription,
@@ -58,32 +55,39 @@ export default function ZoningUseComponent() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-3xl mx-auto py-10">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
-                <FormField
-                    control={form.control}
-                    name="name_7707124737"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                <FormControl>
-                                    <SelectTrigger>
-                                        <SelectValue placeholder="Select a verified email to display" />
-                                    </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                    <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                    <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                    <SelectItem value="m@support.com">m@support.com</SelectItem>
-                                </SelectContent>
-                            </Select>
-                            <FormDescription>You can manage email addresses in your email settings.</FormDescription>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <Button type="submit">Submit</Button>
+                <div className="grid grid-cols-12 gap-12">
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="name_7707124737"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Email</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select a verified email to display" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
+                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
+                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                    </div>
+
+                </div>
             </form>
         </Form>
     )

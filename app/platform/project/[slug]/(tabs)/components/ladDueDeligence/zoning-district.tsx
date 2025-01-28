@@ -12,9 +12,6 @@ import {
 } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import {
-    Button
-} from "@/components/ui/button"
-import {
     Form,
     FormControl,
     FormDescription,
@@ -66,9 +63,9 @@ export default function ZoningDistrictComponent() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-3xl mx-auto py-10">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
@@ -138,7 +135,7 @@ export default function ZoningDistrictComponent() {
 
                 </div>
 
-                <div className="grid grid-cols-12 gap-4">
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
@@ -212,7 +209,6 @@ export default function ZoningDistrictComponent() {
                     </div>
 
                 </div>
-                <Button type="submit">Submit</Button>
             </form>
         </Form>
     )

@@ -67,31 +67,9 @@ export default function AppraisalComponent() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-3xl mx-auto py-10">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
-                <div className="grid grid-cols-12 gap-4">
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="name_0018466326"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Site Width (ft.)</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="shadcn"
-
-                                            type=""
-                                            {...field} />
-                                    </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
@@ -161,13 +139,14 @@ export default function AppraisalComponent() {
 
                 </div>
 
-                <div className="grid grid-cols-12 gap-4">
+
+                <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
                         <FormField
                             control={form.control}
-                            name="name_9188249018"
+                            name="name_7567940105"
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Username</FormLabel>
@@ -184,6 +163,60 @@ export default function AppraisalComponent() {
                             )}
                         />
                     </div>
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="name_8790139012"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Username</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="shadcn"
+
+                                            type=""
+                                            {...field} />
+                                    </FormControl>
+                                    <FormDescription>This is your public display name.</FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="name_7124336377"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Email</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select a verified email to display" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
+                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
+                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                </div>
+
+
+                <div className="grid grid-cols-12 gap-4">
 
                     <div className="col-span-4">
 
@@ -228,35 +261,7 @@ export default function AppraisalComponent() {
                         />
                     </div>
 
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="name_7124336377"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Email</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                        <FormControl>
-                                            <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
-                                            </SelectTrigger>
-                                        </FormControl>
-                                        <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
                 </div>
-                <Button type="submit">Submit</Button>
             </form>
         </Form>
     )
