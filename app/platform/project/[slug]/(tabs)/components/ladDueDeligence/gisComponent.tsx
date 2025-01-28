@@ -14,7 +14,7 @@ import * as z from "zod"
 import {
     Form,
     FormControl,
-    FormDescription,
+    // FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -32,8 +32,8 @@ import {
 } from "@/components/ui/select"
 
 const formSchema = z.object({
-    name_4576612855: z.string(),
-    name_7543640866: z.string()
+    zoning: z.string(),
+    flood_zone: z.string()
 });
 
 export default function GISComponent() {
@@ -67,18 +67,18 @@ export default function GISComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_4576612855"
+                            name="zoning"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Zoning</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder=""
 
                                             type=""
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
+                                    {/* <FormDescription>This is your public display name.</FormDescription> */}
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -89,23 +89,22 @@ export default function GISComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_7543640866"
+                            name="flood_zone"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Flood Zone</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select an option" />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
+                                    {/* <FormDescription>You can manage email addresses in your email settings.</FormDescription> */}
                                     <FormMessage />
                                 </FormItem>
                             )}
