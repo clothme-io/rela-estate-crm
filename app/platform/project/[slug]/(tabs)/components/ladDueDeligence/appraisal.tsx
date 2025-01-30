@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -31,15 +30,16 @@ import {
     SelectTrigger,
     SelectValue
 } from "@/components/ui/select"
+import { Separator } from "@/components/ui/separator"
 
 const formSchema = z.object({
-    name_0018466326: z.string(),
-    name_7567940105: z.string(),
-    name_8790139012: z.string(),
-    name_2760527271: z.string(),
-    name_9188249018: z.string(),
-    name_4551934808: z.coerce.date(),
-    name_7124336377: z.string()
+    sideWidth: z.string(),
+    sideDepth: z.string(),
+    area: z.string(),
+    lot: z.string(),
+    block: z.string(),
+    deedTransfer: z.coerce.date(),
+    frequentlyTraded: z.string()
 });
 
 export default function AppraisalComponent() {
@@ -47,7 +47,7 @@ export default function AppraisalComponent() {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            "name_4551934808": new Date()
+            "deedTransfer": new Date()
         },
     })
 
@@ -69,24 +69,28 @@ export default function AppraisalComponent() {
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
+                <div className="mt-10">
+                    <p className="pb-2">Appraisal District</p>
+                    <Separator />
+                </div>
+
                 <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
                         <FormField
                             control={form.control}
-                            name="name_7567940105"
+                            name="sideWidth"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Site Width (ft.)</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -97,18 +101,17 @@ export default function AppraisalComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8790139012"
+                            name="sideDepth"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Site Depth (ft.)</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
                                             type=""
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -119,18 +122,17 @@ export default function AppraisalComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_2760527271"
+                            name="area"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Area (sqft.)</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -146,18 +148,17 @@ export default function AppraisalComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_7567940105"
+                            name="lot"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Lot</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -168,18 +169,17 @@ export default function AppraisalComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8790139012"
+                            name="block"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Block</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -190,23 +190,21 @@ export default function AppraisalComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_7124336377"
+                            name="frequentlyTraded"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Frequently traded</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select an option..." />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -222,17 +220,17 @@ export default function AppraisalComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_4551934808"
+                            name="deedTransfer"
                             render={({ field }) => (
                                 <FormItem className="flex flex-col">
-                                    <FormLabel>Date of birth</FormLabel>
+                                    <FormLabel>Last deed transfer</FormLabel>
                                     <Popover>
                                         <PopoverTrigger asChild>
                                             <FormControl>
                                                 <Button
                                                     variant={"outline"}
                                                     className={cn(
-                                                        "w-[240px] pl-3 text-left font-normal",
+                                                        "w-[390px] pl-3 text-left font-normal",
                                                         !field.value && "text-muted-foreground"
                                                     )}
                                                 >
@@ -254,7 +252,6 @@ export default function AppraisalComponent() {
                                             />
                                         </PopoverContent>
                                     </Popover>
-                                    <FormDescription>Your date of birth is used to calculate your age.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
