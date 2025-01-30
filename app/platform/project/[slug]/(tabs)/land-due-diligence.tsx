@@ -12,13 +12,13 @@ export default function LandDueDiligence() {
         <div className="">
 
             <GISComponent />
-            <Separator className="my-10" />
+
             <AppraisalComponent />
             <Separator className="my-10" />
             <ZoningUseComponent />
-            <Separator className="my-10" />
+
             <ZoningDistrictComponent />
-            <Separator className="my-10" />
+
             <CheckListComponent />
 
         </div>

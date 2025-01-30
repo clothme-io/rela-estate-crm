@@ -14,7 +14,6 @@ import * as z from "zod"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -30,15 +29,16 @@ import {
 import {
     Textarea
 } from "@/components/ui/textarea"
+import { Separator } from "@/components/ui/separator"
 
 const formSchema = z.object({
-    name_1881447848: z.string(),
-    name_3359236591: z.string(),
-    name_4979146468: z.string(),
-    name_4637654885: z.string(),
-    name_1167336552: z.string(),
-    name_6289576535: z.string(),
-    name_5185018781: z.string()
+    newContructionOnBlock: z.string(),
+    housesOnEitherSide: z.string(),
+    fireManholeWater: z.string(),
+    historicStructures: z.string(),
+    abnormalTopography: z.string(),
+    largeNumberOfTrees: z.string(),
+    anythingElse: z.string()
 });
 
 export default function CheckListComponent() {
@@ -66,29 +66,32 @@ export default function CheckListComponent() {
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10 pb-32">
 
+                <div className="mt-10">
+                    <p className="pb-2">Visual Checks</p>
+                    <Separator />
+                </div>
+
                 <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
                         <FormField
                             control={form.control}
-                            name="name_1881447848"
+                            name="newContructionOnBlock"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Is there a new construction on the block?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select an option..." />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -99,23 +102,21 @@ export default function CheckListComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_3359236591"
+                            name="housesOnEitherSide"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Are there houses on either side?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select an option..." />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -126,23 +127,21 @@ export default function CheckListComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_4979146468"
+                            name="fireManholeWater"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Are there fire hudrants, manholdes, water meters nearby?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select an option..." />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -157,23 +156,21 @@ export default function CheckListComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_4637654885"
+                            name="historicStructures"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>In historical street view, were there previous structures?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select an option..." />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -184,23 +181,21 @@ export default function CheckListComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_1167336552"
+                            name="abnormalTopography"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Abnormal topography?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select an option..." />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -211,23 +206,21 @@ export default function CheckListComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_6289576535"
+                            name="largeNumberOfTrees"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Large number of trees?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="SSelect an option..." />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -242,18 +235,17 @@ export default function CheckListComponent() {
                     <div className="col-span-4">
                         <FormField
                             control={form.control}
-                            name="name_5185018781"
+                            name="anythingElse"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Bio</FormLabel>
+                                    <FormLabel>Anything else</FormLabel>
                                     <FormControl>
                                         <Textarea
-                                            placeholder="Placeholder"
-                                            className="resize-none"
+                                            placeholder=""
+                                            className=""
                                             {...field}
                                         />
                                     </FormControl>
-                                    <FormDescription>You can @mention other users and organizations.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
