@@ -23,21 +23,21 @@ import {
 import {
     Input
 } from "@/components/ui/input"
+import { Separator } from "@/components/ui/separator"
 
 const formSchema = z.object({
-    name_2995272233: z.string(),
-    name_7833829454: z.string(),
-    name_8330878355: z.string(),
-    name_8782628321: z.string(),
-    name_1893578368: z.string(),
-    name_1997327117: z.string(),
-    name_4394447562: z.string(),
-    name_1041566425: z.string(),
-    name_8647873771: z.string(),
-    name_8542790972: z.string(),
-    name_3655596419: z.string(),
-    name_4963955234: z.string()
+    architecturalDesignFees: z.string(),
+    inspectionFees: z.string(),
+    landRealEstateCosts: z.string(),
+    equipmentRental: z.string(),
+    loanInterestAccountingFees: z.string(),
+    projectManagement: z.string(),
+    insuranceProfessionalDues: z.string(),
+    localStateTaxes: z.string(),
+    advertisingPublicRelations: z.string(),
+    additionalWorkStudies: z.string(),
 });
+
 
 export default function SoftCostComponent() {
 
@@ -64,21 +64,26 @@ export default function SoftCostComponent() {
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10 pb-32">
 
+                <div className="mt-2">
+                    <p className="pb-2 text-lg font-semibold">Soft Cost</p>
+                    <Separator />
+                </div>
+
                 <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
                         <FormField
                             control={form.control}
-                            name="name_2995272233"
+                            name="architecturalDesignFees"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Architectural and design fees</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
                                     <FormDescription>This is your public display name.</FormDescription>
@@ -92,18 +97,17 @@ export default function SoftCostComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_7833829454"
+                            name="inspectionFees"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Inspection fees</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -114,18 +118,17 @@ export default function SoftCostComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8330878355"
+                            name="landRealEstateCosts"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Land and real estate costs</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -140,18 +143,17 @@ export default function SoftCostComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8782628321"
+                            name="equipmentRental"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Construction equipment, rental and tools</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -162,18 +164,17 @@ export default function SoftCostComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_1893578368"
+                            name="loanInterestAccountingFees"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Loan interest and accounting fees</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -184,18 +185,17 @@ export default function SoftCostComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_1997327117"
+                            name="projectManagement"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Project management</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -210,18 +210,17 @@ export default function SoftCostComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_4394447562"
+                            name="insuranceProfessionalDues"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Construction insurance and professional dues</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -232,18 +231,17 @@ export default function SoftCostComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_1041566425"
+                            name="localStateTaxes"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Local and state taxes</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -254,18 +252,17 @@ export default function SoftCostComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8647873771"
+                            name="advertisingPublicRelations"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Advertising and public relations</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -280,25 +277,24 @@ export default function SoftCostComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8542790972"
+                            name="additionalWorkStudies"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Additional work and studies</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
                     </div>
 
-                    <div className="col-span-4">
+                    {/* <div className="col-span-4">
 
                         <FormField
                             control={form.control}
@@ -340,7 +336,7 @@ export default function SoftCostComponent() {
                                 </FormItem>
                             )}
                         />
-                    </div>
+                    </div> */}
 
                 </div>
             </form>

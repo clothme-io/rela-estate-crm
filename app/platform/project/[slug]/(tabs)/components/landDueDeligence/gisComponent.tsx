@@ -30,6 +30,7 @@ import {
     SelectTrigger,
     SelectValue
 } from "@/components/ui/select"
+import { Separator } from "@/components/ui/separator"
 
 const formSchema = z.object({
     zoning: z.string(),
@@ -60,6 +61,11 @@ export default function GISComponent() {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
+
+                <div className="mt-2">
+                    <p className="pb-2 text-lg font-semibold">GIS Map</p>
+                    <Separator />
+                </div>
 
                 <div className="grid grid-cols-12 gap-4">
 

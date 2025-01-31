@@ -1,9 +1,8 @@
-import { Separator } from "@/components/ui/separator";
-import AppraisalComponent from "./components/ladDueDeligence/appraisal";
-import CheckListComponent from "./components/ladDueDeligence/check-list";
-import GISComponent from "./components/ladDueDeligence/gisComponent";
-import ZoningDistrictComponent from "./components/ladDueDeligence/zoning-district";
-import ZoningUseComponent from "./components/ladDueDeligence/zoning-use";
+import AppraisalComponent from "./components/landDueDeligence/appraisal";
+import CheckListComponent from "./components/landDueDeligence/check-list";
+import GISComponent from "./components/landDueDeligence/gisComponent";
+import ZoningDistrictComponent from "./components/landDueDeligence/zoning-district";
+import ZoningUseComponent from "./components/landDueDeligence/zoning-use";
 
 
 export default function LandDueDiligence() {
@@ -14,7 +13,7 @@ export default function LandDueDiligence() {
             <GISComponent />
 
             <AppraisalComponent />
-            <Separator className="my-10" />
+
             <ZoningUseComponent />
 
             <ZoningDistrictComponent />

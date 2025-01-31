@@ -2,16 +2,14 @@
 
 import * as React from "react"
 import {
-    // AudioWaveform,
     BookOpen,
-    // Bot,
-    // Command,
+    ReceiptText,
     Frame,
     GalleryVerticalEnd,
-    Map,
     PieChart,
     // Settings2,
     SquareTerminal,
+    Mails,
 } from "lucide-react"
 import { TeamSwitcher } from "./team-switcher"
 // import { NavUser } from "./nav-user"
@@ -22,6 +20,7 @@ import { TeamSwitcher } from "./team-switcher"
 import {
     Sidebar,
     SidebarContent,
+    SidebarFooter,
     // SidebarFooter,
     SidebarHeader,
     SidebarRail,
@@ -29,6 +28,7 @@ import {
 import { NavMain } from "./nav-main"
 import { NavProjects } from "./nav-projects"
 import { NavResources } from "./nav-resources"
+import { NavUser } from "./nav-user"
 // import { NavProjects } from "./nav-projects"
 
 
@@ -48,7 +48,7 @@ const data = {
     ],
     navMain: [
         {
-            title: "Project",
+            title: "Land",
             url: "#",
             icon: SquareTerminal,
             isActive: true,
@@ -99,21 +99,21 @@ const data = {
             items: []
         },
         {
+            name: "Accounting",
+            url: "#",
+            icon: ReceiptText,
+            items: []
+        },
+        {
             name: "Schedule",
             url: "#",
             icon: PieChart,
             items: []
         },
         {
-            name: "Accounting",
-            url: "#",
-            icon: Map,
-            items: []
-        },
-        {
             name: "Mail",
             url: "#",
-            icon: Map,
+            icon: Mails,
             items: []
         },
     ],
@@ -160,9 +160,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <NavResources items={dataResource.nav} />
                 </div>
             </SidebarContent>
-            {/* <SidebarFooter> */}
-            {/* <NavUser user={data.user} /> */}
-            {/* </SidebarFooter> */}
+            <SidebarFooter>
+                <NavUser user={data.user} />
+            </SidebarFooter>
             <SidebarRail />
         </Sidebar>
     )

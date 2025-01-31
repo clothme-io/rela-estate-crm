@@ -67,7 +67,7 @@ export default function CheckListComponent() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10 pb-32">
 
                 <div className="mt-10">
-                    <p className="pb-2">Visual Checks</p>
+                    <p className="pb-2 text-lg font-semibold">Visual Checks</p>
                     <Separator />
                 </div>
 

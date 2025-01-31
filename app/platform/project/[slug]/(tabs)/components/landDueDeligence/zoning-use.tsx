@@ -14,7 +14,6 @@ import * as z from "zod"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -27,9 +26,10 @@ import {
     SelectTrigger,
     SelectValue
 } from "@/components/ui/select"
+import { Separator } from "@/components/ui/separator"
 
 const formSchema = z.object({
-    name_7707124737: z.string()
+    consistentZoning: z.string()
 });
 
 export default function ZoningUseComponent() {
@@ -57,16 +57,20 @@ export default function ZoningUseComponent() {
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
+                <div className="mt-10">
+                    <p className="pb-2 text-lg font-semibold">Zoning Use Regulations</p>
+                    <Separator />
+                </div>
                 <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
                         <FormField
                             control={form.control}
-                            name="name_7707124737"
+                            name="consistentZoning"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Is the intended use consistent with zoning?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
@@ -74,12 +78,10 @@ export default function ZoningUseComponent() {
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}

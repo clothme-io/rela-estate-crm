@@ -27,7 +27,7 @@ export function DashboardTabs() {
 
     return (
         <div className="flex flex-col w-full">
-            <nav className="flex items-center gap-4 py-4 border-b bg-white">
+            <nav className="flex items-center gap-4 py-4 bg-white"> {/* border-b */}
                 {/* Due Diligence */}
                 <Button
                     variant="ghost"

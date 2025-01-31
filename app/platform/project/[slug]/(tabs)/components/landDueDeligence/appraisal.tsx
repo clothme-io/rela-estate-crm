@@ -70,7 +70,7 @@ export default function AppraisalComponent() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
                 <div className="mt-10">
-                    <p className="pb-2">Appraisal District</p>
+                    <p className="pb-2 text-lg font-semibold">Appraisal District</p>
                     <Separator />
                 </div>
 
