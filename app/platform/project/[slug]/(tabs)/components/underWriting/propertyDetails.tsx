@@ -14,7 +14,6 @@ import * as z from "zod"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -23,14 +22,15 @@ import {
 import {
     Input
 } from "@/components/ui/input"
+import { Separator } from "@/components/ui/separator"
 
 const formSchema = z.object({
-    name_2995272233: z.string(),
-    name_7833829454: z.string(),
-    name_8330878355: z.string(),
-    name_8782628321: z.string(),
-    name_1893578368: z.string(),
-    name_1997327117: z.string()
+    landAsking: z.string(),
+    zoningRight: z.string(),
+    sqft: z.string(),
+    salesComps: z.string(),
+    rentalComps: z.string(),
+    unitsProposed: z.string()
 });
 
 export default function PropertyDetailComponent() {
@@ -58,24 +58,28 @@ export default function PropertyDetailComponent() {
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
+                <div className="mt-2">
+                    <p className="pb-2 text-lg font-semibold">Details</p>
+                    <Separator />
+                </div>
+
                 <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">
 
                         <FormField
                             control={form.control}
-                            name="name_2995272233"
+                            name="landAsking"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Land Asking Price</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -86,18 +90,17 @@ export default function PropertyDetailComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_7833829454"
+                            name="zoningRight"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Type of Zoning Allowed</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -108,18 +111,17 @@ export default function PropertyDetailComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8330878355"
+                            name="sqft"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Build SqFT</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -134,18 +136,17 @@ export default function PropertyDetailComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8782628321"
+                            name="salesComps"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Sales Comps</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -156,18 +157,17 @@ export default function PropertyDetailComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_1893578368"
+                            name="rentalComps"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Rental Comps</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -178,18 +178,17 @@ export default function PropertyDetailComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_1997327117"
+                            name="unitsProposed"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Prposed Units</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}

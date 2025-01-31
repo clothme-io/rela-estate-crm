@@ -14,7 +14,6 @@ import * as z from "zod"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -33,12 +32,12 @@ import {
 import { Separator } from "@/components/ui/separator"
 
 const formSchema = z.object({
-    name_5238647908: z.string(),
-    name_7833202267: z.string(),
-    name_8043776224: z.string(),
-    name_8185825955: z.string(),
-    name_3014311591: z.string(),
-    name_5253360996: z.string()
+    frontSetBack: z.string(),
+    sideSetBack: z.string(),
+    rearSetBack: z.string(),
+    coverageRatio: z.string(),
+    maxHeight: z.string(),
+    planset: z.string()
 });
 
 export default function ZoningDistrictComponent() {
@@ -67,7 +66,7 @@ export default function ZoningDistrictComponent() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
                 <div className="mt-10">
-                    <p className="pb-2">Zoing District Planning</p>
+                    <p className="pb-2 text-lg font-semibold">Zoing District Planning</p>
                     <Separator />
                 </div>
                 <div className="grid grid-cols-12 gap-12">
@@ -76,18 +75,17 @@ export default function ZoningDistrictComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_5238647908"
+                            name="frontSetBack"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Front setback (ft.)</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -98,18 +96,17 @@ export default function ZoningDistrictComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_7833202267"
+                            name="sideSetBack"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Side setback (ft.)</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -120,18 +117,17 @@ export default function ZoningDistrictComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8043776224"
+                            name="rearSetBack"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Rear setback (ft.)</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -146,18 +142,17 @@ export default function ZoningDistrictComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_8185825955"
+                            name="coverageRatio"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Coverage Ratio (%)</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -168,18 +163,17 @@ export default function ZoningDistrictComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_3014311591"
+                            name="maxHeight"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Max Height (ft.)</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -190,23 +184,21 @@ export default function ZoningDistrictComponent() {
 
                         <FormField
                             control={form.control}
-                            name="name_5253360996"
+                            name="planset"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Will the proposed planset work?</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select an option..." />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                            <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                            <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    <FormDescription>You can manage email addresses in your email settings.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
