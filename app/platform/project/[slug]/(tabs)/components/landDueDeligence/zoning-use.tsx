@@ -74,7 +74,7 @@ export default function ZoningUseComponent() {
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select a verified email to display" />
+                                                <SelectValue placeholder="Select an option..." />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
