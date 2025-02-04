@@ -41,15 +41,15 @@ const data = {
     },
     teams: [
         {
-            name: "Acme Inc",
+            name: "Real Estate SaaS",
             logo: GalleryVerticalEnd,
-            plan: "Enterprise",
+            plan: "",
         }
     ],
     navMain: [
         {
             title: "Land",
-            url: "#",
+            url: "/platform/project",
             icon: SquareTerminal,
             isActive: true,
             items: [

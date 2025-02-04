@@ -153,6 +153,7 @@ export function SignUpForm({
                                                     <FormControl>
                                                         <Input
                                                             {...field}
+                                                            type="password"
                                                         />
                                                     </FormControl>
                                                     <FormMessage />

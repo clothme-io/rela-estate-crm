@@ -19,7 +19,7 @@ import {
 import LandDueDiligence from "../(tabs)/land-due-diligence"
 import UnderWritingComponent from "../(tabs)/under-writing"
 
-type Tab = 'due-diligence' | 'under-writing' | 'budget' | 'project-management' | 'gis-map'
+type Tab = 'due-diligence' | 'New Construction' | 'Renovation' | 'project-management' | 'gis-map'
 
 export function DashboardTabs() {
 
@@ -41,12 +41,21 @@ export function DashboardTabs() {
                 {/* Project Calc */}
                 <Button
                     variant="ghost"
-                    className={`flex items-center gap-2 ${activeTab === 'under-writing' ? 'bg-slate-100' : 'hover:bg-slate-100'}`}
-                    onClick={() => setActiveTab('under-writing')}
+                    className={`flex items-center gap-2 ${activeTab === 'New Construction' ? 'bg-slate-100' : 'hover:bg-slate-100'}`}
+                    onClick={() => setActiveTab('New Construction')}
                 >
                     <Calculator className="h-4 w-4" />
-                    <span>Under Writing</span>
+                    <span>New Construction (Asumption)</span>
                 </Button>
+
+                {/* <Button
+                    variant="ghost"
+                    className={`flex items-center gap-2 ${activeTab === 'Renovation' ? 'bg-slate-100' : 'hover:bg-slate-100'}`}
+                    onClick={() => setActiveTab('Renovation')}
+                >
+                    <Calculator className="h-4 w-4" />
+                    <span>Rehab (Assumption)</span>
+                </Button> */}
 
                 {/* Budget Dropdown */}
                 {/* <DropdownMenu>
@@ -101,8 +110,8 @@ export function DashboardTabs() {
             {/* Content area - can be populated based on selected tab */}
             <div className="">
                 {activeTab === 'due-diligence' && <LandDueDiligence />}
-                {activeTab === 'under-writing' && <UnderWritingComponent />}
-                {activeTab === 'budget' && <div>Budget Content</div>}
+                {activeTab === 'New Construction' && <UnderWritingComponent />}
+                {activeTab === 'Renovation' && <div>Budget Content</div>}
                 {activeTab === 'project-management' && <div>Project Management Content</div>}
                 {activeTab === 'gis-map' && <div>GIS Map Content</div>}
             </div>

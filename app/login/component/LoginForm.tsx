@@ -129,6 +129,7 @@ export function LoginForm({
                                                     <FormControl>
                                                         <Input
                                                             {...field}
+                                                            type="password"
                                                         />
                                                     </FormControl>
                                                     <FormMessage />
