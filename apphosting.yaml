@@ -23,8 +23,8 @@ env:
   - variable: NEXT_PUBLIC_FIREBASE_STRING
     secret: "NEXT_PUBLIC_FIREBASE_STRING"
   
-  # - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-  # secret: mySecretRef
+  - variable: NEXT_PUBLIC_SUPABASE_STRING
+    secret: "NEXT_PUBLIC_SUPABASE_STRING"
 
   # - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
   #   secret: mySecretRef
