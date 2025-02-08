@@ -55,148 +55,154 @@ export default function PropertyDetailComponent() {
     }
 
     return (
-        <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
+        <>
+            <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
-                <div className="mt-2">
-                    <p className="pb-2 text-lg font-semibold">Details</p>
-                    <Separator />
-                </div>
-
-                <div className="grid grid-cols-12 gap-12">
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="landAsking"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Land Asking Price</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                    <div className="mt-2">
+                        <p className="pb-2 text-lg font-semibold">Details</p>
+                        <Separator />
                     </div>
 
-                    <div className="col-span-4">
+                    <div className="grid grid-cols-12 gap-12">
 
-                        <FormField
-                            control={form.control}
-                            name="zoningRight"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Type of Zoning Allowed</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
+                        <div className="col-span-6">
 
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                            <FormField
+                                control={form.control}
+                                name="landAsking"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Land Asking Price</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <div className="col-span-6">
+
+                            <FormField
+                                control={form.control}
+                                name="zoningRight"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Type of Zoning Allowed</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
                     </div>
 
-                    <div className="col-span-4">
+                    <div className="grid grid-cols-12 gap-12">
 
-                        <FormField
-                            control={form.control}
-                            name="sqft"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Build SqFT</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
+                        <div className="col-span-6">
 
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                            <FormField
+                                control={form.control}
+                                name="sqft"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Build SqFT</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <div className="col-span-6">
+
+                            <FormField
+                                control={form.control}
+                                name="unitsProposed"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Prposed Units</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
                     </div>
 
-                </div>
+                    <div className="grid grid-cols-12 gap-12">
 
-                <div className="grid grid-cols-12 gap-12">
+                        <div className="col-span-6">
 
-                    <div className="col-span-4">
+                            <FormField
+                                control={form.control}
+                                name="salesComps"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Sales Comps</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
 
-                        <FormField
-                            control={form.control}
-                            name="salesComps"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Sales Comps</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
 
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                        <div className="col-span-6">
+
+                            <FormField
+                                control={form.control}
+                                name="rentalComps"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Rental Comps</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
                     </div>
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="rentalComps"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Rental Comps</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="unitsProposed"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Prposed Units</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                </div>
-            </form>
-        </Form>
+                </form>
+            </Form>
+        </>
     )
 }
