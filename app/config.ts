@@ -34,8 +34,9 @@ export const auth = getAuth(app);
 export const analytics = isSupported().then(yes => yes ? getAnalytics(app) : null);
 
 // Supabse Client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+const SUPABASE_STRING = process.env.NEXT_PUBLIC_SUPABASE_STRING as string;
+const supabaseKey = SUPABASE_STRING[0];
+const supabaseUrl = SUPABASE_STRING[1];
 if (!supabaseKey) {
   throw new Error("Missing Supabase key");
 };
