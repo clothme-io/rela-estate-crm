@@ -60,239 +60,240 @@ export default function SoftCostComponent() {
     }
 
     return (
-        <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10 pb-32">
+        <>
+            <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
 
-                <div className="mt-2">
-                    <p className="pb-2 text-lg font-semibold">Soft Cost</p>
-                    <Separator />
-                </div>
-
-                <div className="grid grid-cols-12 gap-12">
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="architecturalDesignFees"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Architectural and design fees</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                    <div className="mt-2">
+                        <p className="pb-2 text-lg font-semibold">Soft Cost</p>
+                        <Separator />
                     </div>
 
-                    <div className="col-span-4">
+                    <div className="grid grid-cols-12 gap-12">
 
-                        <FormField
-                            control={form.control}
-                            name="inspectionFees"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Inspection fees</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
+                        <div className="col-span-4">
 
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                            <FormField
+                                control={form.control}
+                                name="architecturalDesignFees"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Architectural and design fees</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <div className="col-span-4">
+
+                            <FormField
+                                control={form.control}
+                                name="inspectionFees"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Inspection fees</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <div className="col-span-4">
+
+                            <FormField
+                                control={form.control}
+                                name="landRealEstateCosts"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Land and real estate costs</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
                     </div>
 
-                    <div className="col-span-4">
+                    <div className="grid grid-cols-12 gap-12">
 
-                        <FormField
-                            control={form.control}
-                            name="landRealEstateCosts"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Land and real estate costs</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
+                        <div className="col-span-4">
 
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                            <FormField
+                                control={form.control}
+                                name="equipmentRental"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Construction equipment, rental and tools</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <div className="col-span-4">
+
+                            <FormField
+                                control={form.control}
+                                name="loanInterestAccountingFees"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Loan interest and accounting fees</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <div className="col-span-4">
+
+                            <FormField
+                                control={form.control}
+                                name="projectManagement"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Project management</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
                     </div>
 
-                </div>
+                    <div className="grid grid-cols-12 gap-12">
 
-                <div className="grid grid-cols-12 gap-12">
+                        <div className="col-span-4">
 
-                    <div className="col-span-4">
+                            <FormField
+                                control={form.control}
+                                name="insuranceProfessionalDues"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Construction insurance and professional dues</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
 
-                        <FormField
-                            control={form.control}
-                            name="equipmentRental"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Construction equipment, rental and tools</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
 
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                        <div className="col-span-4">
+
+                            <FormField
+                                control={form.control}
+                                name="localStateTaxes"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Local and state taxes</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <div className="col-span-4">
+
+                            <FormField
+                                control={form.control}
+                                name="advertisingPublicRelations"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Advertising and public relations</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
                     </div>
 
-                    <div className="col-span-4">
+                    <div className="grid grid-cols-12 gap-12">
 
-                        <FormField
-                            control={form.control}
-                            name="loanInterestAccountingFees"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Loan interest and accounting fees</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
+                        <div className="col-span-4">
 
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
+                            <FormField
+                                control={form.control}
+                                name="additionalWorkStudies"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Additional work and studies</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
 
-                    <div className="col-span-4">
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
 
-                        <FormField
-                            control={form.control}
-                            name="projectManagement"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Project management</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                </div>
-
-                <div className="grid grid-cols-12 gap-12">
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="insuranceProfessionalDues"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Construction insurance and professional dues</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="localStateTaxes"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Local and state taxes</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="advertisingPublicRelations"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Advertising and public relations</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                </div>
-
-                <div className="grid grid-cols-12 gap-12">
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="additionalWorkStudies"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Additional work and studies</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                    {/* <div className="col-span-4">
+                        {/* <div className="col-span-4">
 
                         <FormField
                             control={form.control}
@@ -336,8 +337,9 @@ export default function SoftCostComponent() {
                         />
                     </div> */}
 
-                </div>
-            </form>
-        </Form>
+                    </div>
+                </form>
+            </Form>
+        </>
     )
 }
