@@ -17,14 +17,16 @@ import { createClient } from '@supabase/supabase-js'
 // const firebaseCValues = JSON.stringify(process.env.NEXT_PUBLIC_FIREBASE || {});
 const firebaseEnvString = process.env.NEXT_PUBLIC_FIREBASE_STRING as string;
 const myEnvArray = firebaseEnvString.split("|");
+console.log("myEnvArray =====", myEnvArray)
+console.log("myEnvArray[0] =====", `${myEnvArray[0]}`)
 const firebaseConfig = {
-  apiKey: myEnvArray[0],
-  authDomain: myEnvArray[1],
-  projectId: myEnvArray[2],
-  storageBucket: myEnvArray[3],
-  messagingSenderId: myEnvArray[4],
-  appId: myEnvArray[5],
-  measurementId: myEnvArray[6]
+  apiKey: `${myEnvArray[0]}`,
+  authDomain: `${myEnvArray[1]}`,
+  projectId: `${myEnvArray[2]}`,
+  storageBucket: `${myEnvArray[3]}`,
+  messagingSenderId: `${myEnvArray[4]}`,
+  appId: `${myEnvArray[5]}`,
+  measurementId: `${myEnvArray[6]}`
 };
 
 // Initialize Firebase
@@ -35,8 +37,9 @@ export const analytics = isSupported().then(yes => yes ? getAnalytics(app) : nul
 
 // Supabse Client
 const SUPABASE_STRING = process.env.NEXT_PUBLIC_SUPABASE_STRING as string;
-const supabaseKey = SUPABASE_STRING[0];
-const supabaseUrl = SUPABASE_STRING[1];
+const supabaseArray = SUPABASE_STRING.split("|");
+const supabaseKey = `${supabaseArray[0]}`;
+const supabaseUrl = `${supabaseArray[1]}`;
 if (!supabaseKey) {
   throw new Error("Missing Supabase key");
 };
