@@ -67,7 +67,7 @@ export default function UnderWritingFinishLevelComponent() {
     return (
         <>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-6">
 
                     <div className="mt-2">
                         <p className="pb-2 text-lg font-semibold">Financing Levels</p>

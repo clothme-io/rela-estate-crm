@@ -62,7 +62,7 @@ export default function SoftCostComponent() {
     return (
         <>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-6">
 
                     <div className="mt-2">
                         <p className="pb-2 text-lg font-semibold">Soft Cost</p>
@@ -71,7 +71,7 @@ export default function SoftCostComponent() {
 
                     <div className="grid grid-cols-12 gap-12">
 
-                        <div className="col-span-4">
+                        <div className="col-span-6">
 
                             <FormField
                                 control={form.control}
@@ -92,7 +92,7 @@ export default function SoftCostComponent() {
                             />
                         </div>
 
-                        <div className="col-span-4">
+                        {/* <div className="col-span-4">
 
                             <FormField
                                 control={form.control}
@@ -111,16 +111,16 @@ export default function SoftCostComponent() {
                                     </FormItem>
                                 )}
                             />
-                        </div>
+                        </div> */}
 
-                        <div className="col-span-4">
+                        <div className="col-span-6">
 
                             <FormField
                                 control={form.control}
                                 name="landRealEstateCosts"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Land and real estate costs</FormLabel>
+                                        <FormLabel>Land and closing costs</FormLabel>
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
@@ -138,7 +138,7 @@ export default function SoftCostComponent() {
 
                     <div className="grid grid-cols-12 gap-12">
 
-                        <div className="col-span-4">
+                        {/* <div className="col-span-4">
 
                             <FormField
                                 control={form.control}
@@ -157,9 +157,9 @@ export default function SoftCostComponent() {
                                     </FormItem>
                                 )}
                             />
-                        </div>
+                        </div> */}
 
-                        <div className="col-span-4">
+                        <div className="col-span-6">
 
                             <FormField
                                 control={form.control}
@@ -180,53 +180,7 @@ export default function SoftCostComponent() {
                             />
                         </div>
 
-                        <div className="col-span-4">
-
-                            <FormField
-                                control={form.control}
-                                name="projectManagement"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Project management</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                placeholder="0"
-
-                                                type="number"
-                                                {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
-
-                    </div>
-
-                    <div className="grid grid-cols-12 gap-12">
-
-                        <div className="col-span-4">
-
-                            <FormField
-                                control={form.control}
-                                name="insuranceProfessionalDues"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Construction insurance and professional dues</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                placeholder="0"
-
-                                                type="number"
-                                                {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
-
-                        <div className="col-span-4">
+                        <div className="col-span-6">
 
                             <FormField
                                 control={form.control}
@@ -247,7 +201,53 @@ export default function SoftCostComponent() {
                             />
                         </div>
 
+                    </div>
+
+                    {/*  <div className="grid grid-cols-12 gap-12">
+
                         <div className="col-span-4">
+
+                            <FormField
+                                control={form.control}
+                                name="insuranceProfessionalDues"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Construction insurance and professional dues</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div> 
+
+                        <div className="col-span-4">
+
+                            <FormField
+                                control={form.control}
+                                name="projectManagement"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Local and state taxes</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                placeholder="0"
+
+                                                type="number"
+                                                {...field} />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div> 
+
+                         <div className="col-span-4">
 
                             <FormField
                                 control={form.control}
@@ -266,13 +266,13 @@ export default function SoftCostComponent() {
                                     </FormItem>
                                 )}
                             />
-                        </div>
+                        </div> 
 
-                    </div>
+                    </div> */}
 
-                    <div className="grid grid-cols-12 gap-12">
+                    {/* <div className="grid grid-cols-12 gap-12">
 
-                        <div className="col-span-4">
+                    <div className="col-span-4">
 
                             <FormField
                                 control={form.control}
@@ -291,9 +291,9 @@ export default function SoftCostComponent() {
                                     </FormItem>
                                 )}
                             />
-                        </div>
+                        </div> 
 
-                        {/* <div className="col-span-4">
+                    <div className="col-span-4">
 
                         <FormField
                             control={form.control}
@@ -335,9 +335,9 @@ export default function SoftCostComponent() {
                                 </FormItem>
                             )}
                         />
-                    </div> */}
+                    </div> 
 
-                    </div>
+                    </div> */}
                 </form>
             </Form>
         </>
