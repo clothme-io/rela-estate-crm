@@ -11,9 +11,6 @@ import {
 } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import {
-    Button
-} from "@/components/ui/button"
-import {
     Form,
     FormControl,
     FormDescription,
@@ -28,19 +25,32 @@ import {
 import {
     Input
 } from "@/components/ui/input"
+import { Separator } from "@/components/ui/separator"
 
 const formSchema = z.object({
-    name_8832514023: z.boolean(),
-    name_7365746051: z.string(),
-    name_5941367895: z.string(),
-    name_3947289315: z.string(),
-    name_5267915538: z.string()
+    hardMoney: z.boolean(),
+    investorMoney: z.boolean(),
+    investorEquity: z.boolean(),
+    loanAmountHM: z.string(),
+    loanAmountIM: z.string(),
+    equity: z.string(),
+    pointsHM: z.string(),
+    pointsIM: z.string(),
+    arpHM: z.string(),
+    arpIM: z.string(),
+    adminFeesHM: z.string(),
+    amortization: z.string()
 });
 
-export default function UnderWritingFinacingComponent() {
+export default function MyForm() {
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
+        defaultValues: {
+            hardMoney: false,
+            investorMoney: false,
+            investorEquity: false
+        }
 
     })
 
@@ -60,105 +70,348 @@ export default function UnderWritingFinacingComponent() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-10">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto py-6">
 
-                <FormField
-                    control={form.control}
-                    name="name_8832514023"
-                    render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5">
-                                <FormLabel>Marketing emails</FormLabel>
-                                <FormDescription>Receive emails about new products, features, and more.</FormDescription>
-                            </div>
-                            <FormControl>
-                                <Switch
-                                    checked={field.value}
-                                    onCheckedChange={field.onChange}
-                                    disabled
-                                    aria-readonly
-                                />
-                            </FormControl>
-                        </FormItem>
-                    )}
-                />
+                <div className="mt-2">
+                    <p className="pb-2 text-lg font-semibold">Financing</p>
+                    <Separator />
+                </div>
 
-                <FormField
-                    control={form.control}
-                    name="name_7365746051"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Username</FormLabel>
-                            <FormControl>
-                                <Input
-                                    placeholder="shadcn"
+                <div className="grid grid-cols-12 gap-4">
 
-                                    type=""
-                                    {...field} />
-                            </FormControl>
-                            <FormDescription>This is your public display name.</FormDescription>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                    <div className="col-span-4">
 
-                <FormField
-                    control={form.control}
-                    name="name_5941367895"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Username</FormLabel>
-                            <FormControl>
-                                <Input
-                                    placeholder="shadcn"
+                        <FormField
+                            control={form.control}
+                            name="hardMoney"
+                            render={({ field }) => (
+                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                                    <div className="space-y-0.5">
+                                        <FormLabel>Hard Money</FormLabel>
+                                    </div>
+                                    <FormControl>
+                                        <Switch
+                                            checked={field.value}
+                                            onCheckedChange={field.onChange}
+                                            aria-readonly
+                                        />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                    </div>
 
-                                    type=""
-                                    {...field} />
-                            </FormControl>
-                            <FormDescription>This is your public display name.</FormDescription>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                    <div className="col-span-4">
 
-                <FormField
-                    control={form.control}
-                    name="name_3947289315"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Username</FormLabel>
-                            <FormControl>
-                                <Input
-                                    placeholder="shadcn"
+                        <FormField
+                            control={form.control}
+                            name="investorMoney"
+                            render={({ field }) => (
+                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                                    <div className="space-y-0.5">
+                                        <FormLabel>Investor Money</FormLabel>
+                                    </div>
+                                    <FormControl>
+                                        <Switch
+                                            checked={field.value}
+                                            onCheckedChange={field.onChange}
+                                            aria-readonly
+                                        />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                    </div>
 
-                                    type=""
-                                    {...field} />
-                            </FormControl>
-                            <FormDescription>This is your public display name.</FormDescription>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                    <div className="col-span-4">
 
-                <FormField
-                    control={form.control}
-                    name="name_5267915538"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Username</FormLabel>
-                            <FormControl>
-                                <Input
-                                    placeholder="shadcn"
+                        <FormField
+                            control={form.control}
+                            name="investorEquity"
+                            render={({ field }) => (
+                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                                    <div className="space-y-0.5">
+                                        <FormLabel>Investor Equity</FormLabel>
+                                    </div>
+                                    <FormControl>
+                                        <Switch
+                                            checked={field.value}
+                                            onCheckedChange={field.onChange}
+                                            aria-readonly
+                                        />
+                                    </FormControl>
+                                </FormItem>
+                            )}
+                        />
+                    </div>
 
-                                    type=""
-                                    {...field} />
-                            </FormControl>
-                            <FormDescription>This is your public display name.</FormDescription>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <Button type="submit">Submit</Button>
+                </div>
+
+                <div className="grid grid-cols-12 gap-4">
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="loanAmountHM"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Loan Amount</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormDescription>Building Budget</FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="loanAmountIM"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Loan Amount</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormDescription>Remaining</FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="equity"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Equity</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                </div>
+
+                <div className="grid grid-cols-12 gap-4">
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="pointsHM"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Points %</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="pointsIM"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Points %</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    {/* <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="amortization"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Points %</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div> */}
+
+                </div>
+
+                <div className="grid grid-cols-12 gap-4">
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="arpHM"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>ARP %</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+                                            type=""
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="arpIM"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>ARP %</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    {/* <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="name_7756372335"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Username</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="shadcn"
+
+                                            type=""
+                                            {...field} />
+                                    </FormControl>
+                                    <FormDescription>This is your public display name.</FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div> */}
+
+                </div>
+
+                <div className="grid grid-cols-12 gap-4">
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="adminFeesHM"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Admin Fees</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="amortization"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Amortization</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    {/* <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="name_3269000247"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Username</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="shadcn"
+
+                                            type=""
+                                            {...field} />
+                                    </FormControl>
+                                    <FormDescription>This is your public display name.</FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div> */}
+
+                </div>
             </form>
         </Form>
     )

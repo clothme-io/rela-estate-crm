@@ -31,6 +31,14 @@ import {
     SelectValue
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    // CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 
 const formSchema = z.object({
     sideWidth: z.string(),
@@ -73,6 +81,34 @@ export default function AppraisalComponent() {
                     <p className="pb-2 text-lg font-semibold">Appraisal District</p>
                     <Separator />
                 </div>
+
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Dallas County, TX Links</CardTitle>
+                        <CardDescription></CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <a target="_blank" href="https://www.cedarhilltx.com/DocumentCenter/View/26833/95-210-Lake-Ridge?bidId=">
+                            <p className="text-blue-500">
+                                https://www.cedarhilltx.com/DocumentCenter/View/26833/95-210-Lake-Ridge?bidId=
+                            </p>
+                        </a>
+                    </CardContent>
+                    <CardContent>
+                        <a target="_blank" href="https://formstack.io/520F1">
+                            <p className="text-blue-500">
+                                https://formstack.io/520F1
+                            </p>
+                        </a>
+                    </CardContent>
+                    <CardContent>
+                        <a target="_blank" href="https://esearch.kaufman-cad.org/">
+                            <p className="text-blue-500">
+                                https://esearch.kaufman-cad.org/
+                            </p>
+                        </a>
+                    </CardContent>
+                </Card>
 
                 <div className="grid grid-cols-12 gap-12">
 
