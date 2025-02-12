@@ -69,42 +69,42 @@ export default function UnderWritingReport() {
     return (
         <>
             <div>
-                <div className="flex justify-between">
+                <div className="flex justify-between py-5">
                     <div>Sales Price</div>
                     <div>$1400</div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between pb-5">
                     <div>Project Cost</div>
                     <div>$1400</div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between pb-5">
                     <div>Out of Pocket</div>
                     <div>$1400</div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between pb-5">
                     <div>Financing (Loan/Investment)</div>
                     <div>$1400</div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between pb-5">
                     <div>Min Net Profile (10%)</div>
                     <div>$1400</div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between pb-5">
                     <div>Take Home</div>
                     <div>$1400</div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between pb-5">
                     <div>Difference</div>
                     <div>$1400</div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between pb-5">
                     <div>Should I buy?</div>
                     <div>$1400</div>
                 </div>

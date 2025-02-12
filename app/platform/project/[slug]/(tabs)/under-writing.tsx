@@ -13,29 +13,29 @@ export default function UnderWritingComponent() {
     return (
 
         <>
-            <div className="flex gap-7 pb-10">
-                <div className="grid grid-cols-12 gap-2">
-                    <div className="col-span-12">
+            {/* <div className="flex gap-7 pb-10"> */}
+            <div className="grid grid-cols-12 gap-2">
+                <div className="col-span-8">
 
-                        <PropertyDetailComponent />
+                    <PropertyDetailComponent />
 
-                        <SoftCostComponent />
+                    <SoftCostComponent />
 
-                        <UnderWritingFinishLevelComponent />
+                    <UnderWritingFinishLevelComponent />
 
-                        <UnderWritingFinacingComponent />
+                    <UnderWritingFinacingComponent />
 
-                        <FinalClosing />
+                    <FinalClosing />
 
-                    </div>
+                </div>
 
-                    <div className="col-span-0 text-gray-600 p-4 fixed bg-slate-50 border-4 border-gray rounded-lg right-0 bottom-0 mt-64 lg:mr-20 mr-10 mb-4">
-                        <div className="w-80">
-                            <h2 className="text-xl font-semibold">Under Writing Report</h2>
-                            <UnderWritingReport />
-                        </div>
+                <div className="col-span-0 text-gray-600 p-4 fixed bg-slate-50 border-4 border-gray rounded-lg right-0 bottom-0 mt-64 lg:mr-10 mr-10 mb-4">
+                    <div className="w-80">
+                        <h2 className="text-xl font-semibold">Under Writing Report</h2>
+                        <UnderWritingReport />
                     </div>
                 </div>
+                {/* </div> */}
             </div>
         </>
     )
