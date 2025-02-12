@@ -27,6 +27,14 @@ import {
     SelectValue
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    // CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 
 const formSchema = z.object({
     consistentZoning: z.string()
@@ -61,6 +69,21 @@ export default function ZoningUseComponent() {
                     <p className="pb-2 text-lg font-semibold">Zoning Use Regulations</p>
                     <Separator />
                 </div>
+
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Dallas County, TX Links</CardTitle>
+                        <CardDescription></CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <a target="_blank" href="https://www.cedarhilltx.com/DocumentCenter/View/26833/95-210-Lake-Ridge?bidId=">
+                            <p className="text-blue-500">
+                                https://www.cedarhilltx.com/DocumentCenter/View/26833/95-210-Lake-Ridge?bidId=
+                            </p>
+                        </a>
+                    </CardContent>
+                </Card>
+
                 <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">

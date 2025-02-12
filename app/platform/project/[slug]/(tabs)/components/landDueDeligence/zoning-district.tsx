@@ -30,6 +30,14 @@ import {
     SelectValue
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    // CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 
 const formSchema = z.object({
     frontSetBack: z.string(),
@@ -69,6 +77,29 @@ export default function ZoningDistrictComponent() {
                     <p className="pb-2 text-lg font-semibold">Zoing District Planning</p>
                     <Separator />
                 </div>
+
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Dallas, TX Links</CardTitle>
+                        <CardDescription></CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <a target="_blank" href="https://www.dallascad.org/">
+                            <p className="text-blue-500">
+                                https://www.dallascad.org/
+                            </p>
+                        </a>
+                    </CardContent>
+                    <CardContent>
+                        <a target="_blank" href="https://dallascityhall.com/departments/sustainabledevelopment/planning/Pages/zoning-districts.aspx">
+                            <p className="text-blue-500">
+                                https://dallascityhall.com/departments/sustainabledevelopment/planning/Pages/zoning-districts.aspx
+                            </p>
+                        </a>
+                    </CardContent>
+                </Card>
+
+
                 <div className="grid grid-cols-12 gap-12">
 
                     <div className="col-span-4">

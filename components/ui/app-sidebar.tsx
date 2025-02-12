@@ -41,14 +41,14 @@ const data = {
     },
     teams: [
         {
-            name: "Real Estate SaaS",
+            name: "Builder IQ",
             logo: GalleryVerticalEnd,
             plan: "",
         }
     ],
     navMain: [
         {
-            title: "Land",
+            title: "Project",
             url: "/platform/project",
             icon: SquareTerminal,
             isActive: true,
@@ -66,6 +66,12 @@ const data = {
                 //         url: "#",
                 //     },
             ],
+        },
+        {
+            title: "Budget",
+            url: "/platform/budget",
+            icon: Frame,
+            items: []
         },
         // {
         //     title: "CRM",
@@ -92,12 +98,6 @@ const data = {
         // },
     ],
     projects: [
-        {
-            name: "Budget",
-            url: "#",
-            icon: Frame,
-            items: []
-        },
         {
             name: "Accounting",
             url: "#",

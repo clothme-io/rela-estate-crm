@@ -31,6 +31,14 @@ import {
     SelectValue
 } from "@/components/ui/select"
 import { Separator } from "@/components/ui/separator"
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 
 const formSchema = z.object({
     zoning: z.string(),
@@ -66,6 +74,27 @@ export default function GISComponent() {
                     <p className="pb-2 text-lg font-semibold">GIS Map</p>
                     <Separator />
                 </div>
+
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Dallas, TX Links</CardTitle>
+                        <CardDescription></CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <a target="_blank" href="https://www.dallascad.org/">
+                            <p className="text-blue-500">
+                                https://www.dallascad.org/
+                            </p>
+                        </a>
+                    </CardContent>
+                    <CardFooter>
+                        <a target="_blank" href="https://dallascityhall.com/departments/sustainabledevelopment/planning/Pages/zoning-districts.aspx">
+                            <p className="text-blue-500">
+                                https://dallascityhall.com/departments/sustainabledevelopment/planning/Pages/zoning-districts.aspx
+                            </p>
+                        </a>
+                    </CardFooter>
+                </Card>
 
                 <div className="grid grid-cols-12 gap-4">
 

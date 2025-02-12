@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { ChevronRight, type LucideIcon } from "lucide-react"
 
 import {
@@ -47,12 +48,14 @@ export function NavMain({
                     >
                         <SidebarMenuItem>
                             <CollapsibleTrigger asChild>
-                                <SidebarMenuButton tooltip={item.title}>
-                                    {item.icon && <item.icon />}
-                                    <span>{item.title}</span>
-                                    {item.items.length > 0 && <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />}
+                                <Link href={item.url}>
+                                    <SidebarMenuButton tooltip={item.title}>
+                                        {item.icon && <item.icon />}
+                                        <span>{item.title}</span>
+                                        {item.items.length > 0 && <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />}
 
-                                </SidebarMenuButton>
+                                    </SidebarMenuButton>
+                                </Link>
                             </CollapsibleTrigger>
                             <CollapsibleContent>
                                 <SidebarMenuSub>

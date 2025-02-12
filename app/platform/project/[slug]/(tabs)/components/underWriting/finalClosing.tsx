@@ -13,7 +13,6 @@ import * as z from "zod"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -25,9 +24,9 @@ import {
 import { Separator } from "@/components/ui/separator"
 
 const formSchema = z.object({
-    name_8138557186: z.string(),
-    name_3759732147: z.string(),
-    name_9503871903: z.string()
+    realtorCommission: z.string(),
+    closingCost: z.string(),
+    afterConstructionValue: z.string()
 });
 
 export default function FinalClosing() {
@@ -66,18 +65,16 @@ export default function FinalClosing() {
 
                         <FormField
                             control={form.control}
-                            name="name_8138557186"
+                            name="realtorCommission"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Realtor Commissions %</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
-
-                                            type=""
+                                            placeholder="0"
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -88,18 +85,16 @@ export default function FinalClosing() {
 
                         <FormField
                             control={form.control}
-                            name="name_3759732147"
+                            name="closingCost"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Closing Cost %</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
-
-                                            type=""
+                                            placeholder="0"
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -110,18 +105,17 @@ export default function FinalClosing() {
 
                         <FormField
                             control={form.control}
-                            name="name_9503871903"
+                            name="afterConstructionValue"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>ACV (After Construction Value)</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
 
-                                            type=""
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}

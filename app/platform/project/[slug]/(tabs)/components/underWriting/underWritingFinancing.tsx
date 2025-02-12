@@ -33,16 +33,13 @@ const formSchema = z.object({
     investorEquity: z.boolean(),
     loanAmountHM: z.string(),
     loanAmountIM: z.string(),
-    loanAmountIE: z.string(),
-    name_5941367895: z.string(),
-    name_0933613298: z.string(),
-    name_1555314456: z.string(),
-    name_3947289315: z.string(),
-    name_9920928896: z.string(),
-    name_7756372335: z.string(),
-    name_5267915538: z.string(),
-    name_6380920196: z.string(),
-    name_3269000247: z.string()
+    equity: z.string(),
+    pointsHM: z.string(),
+    pointsIM: z.string(),
+    arpHM: z.string(),
+    arpIM: z.string(),
+    adminFeesHM: z.string(),
+    amortization: z.string()
 });
 
 export default function MyForm() {
@@ -189,7 +186,7 @@ export default function MyForm() {
                                             type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>Building Budget</FormDescription>
+                                    <FormDescription>Remaining</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -200,78 +197,10 @@ export default function MyForm() {
 
                         <FormField
                             control={form.control}
-                            name="loanAmountIE"
+                            name="equity"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Loan Amount</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormDescription>Build Budget</FormDescription>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                </div>
-
-                <div className="grid grid-cols-12 gap-4">
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="name_5941367895"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Points %</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="name_0933613298"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Points %</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            placeholder="0"
-
-                                            type="number"
-                                            {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-
-                    <div className="col-span-4">
-
-                        <FormField
-                            control={form.control}
-                            name="name_1555314456"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Points %</FormLabel>
+                                    <FormLabel>Equity</FormLabel>
                                     <FormControl>
                                         <Input
                                             placeholder="0"
@@ -293,18 +222,16 @@ export default function MyForm() {
 
                         <FormField
                             control={form.control}
-                            name="name_3947289315"
+                            name="pointsHM"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Points %</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
-
-                                            type=""
+                                            placeholder="0"
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -315,18 +242,61 @@ export default function MyForm() {
 
                         <FormField
                             control={form.control}
-                            name="name_9920928896"
+                            name="pointsIM"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Points %</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
+                                            placeholder="0"
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
 
+                    {/* <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="amortization"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Points %</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div> */}
+
+                </div>
+
+                <div className="grid grid-cols-12 gap-4">
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="arpHM"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>ARP %</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
                                             type=""
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -334,6 +304,26 @@ export default function MyForm() {
                     </div>
 
                     <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="arpIM"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>ARP %</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            placeholder="0"
+                                            type="number"
+                                            {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    {/* <div className="col-span-4">
 
                         <FormField
                             control={form.control}
@@ -353,7 +343,7 @@ export default function MyForm() {
                                 </FormItem>
                             )}
                         />
-                    </div>
+                    </div> */}
 
                 </div>
 
@@ -363,18 +353,16 @@ export default function MyForm() {
 
                         <FormField
                             control={form.control}
-                            name="name_5267915538"
+                            name="adminFeesHM"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Admin Fees</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
-
-                                            type=""
+                                            placeholder="0"
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -385,25 +373,23 @@ export default function MyForm() {
 
                         <FormField
                             control={form.control}
-                            name="name_6380920196"
+                            name="amortization"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Username</FormLabel>
+                                    <FormLabel>Amortization</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="shadcn"
-
-                                            type=""
+                                            placeholder="0"
+                                            type="number"
                                             {...field} />
                                     </FormControl>
-                                    <FormDescription>This is your public display name.</FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
                     </div>
 
-                    <div className="col-span-4">
+                    {/* <div className="col-span-4">
 
                         <FormField
                             control={form.control}
@@ -423,7 +409,7 @@ export default function MyForm() {
                                 </FormItem>
                             )}
                         />
-                    </div>
+                    </div> */}
 
                 </div>
             </form>
