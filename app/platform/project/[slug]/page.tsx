@@ -10,7 +10,7 @@ export default function Page() {
         <div className="">
 
             <main className="min-h-screen">
-                <div className="px-48 pt-16 pb-6">
+                <div className="md:px-20 lg:px-48 pt-16 pb-6">
 
                     <div className="pb-10">
                         <PropertyLocation
