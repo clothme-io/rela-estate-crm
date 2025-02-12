@@ -29,7 +29,7 @@ export default function UnderWritingComponent() {
 
                     </div>
 
-                    <div className="col-span-0 text-gray-600 p-4 fixed bg-slate-50 border-4 border-gray rounded-lg right-0 bottom-0 mt-64 mr-48 mb-4">
+                    <div className="col-span-0 text-gray-600 p-4 fixed bg-slate-50 border-4 border-gray rounded-lg right-0 bottom-0 mt-64 lg:mr-20 mr-10 mb-4">
                         <div className="w-80">
                             <h2 className="text-xl font-semibold">Under Writing Report</h2>
                             <UnderWritingReport />
