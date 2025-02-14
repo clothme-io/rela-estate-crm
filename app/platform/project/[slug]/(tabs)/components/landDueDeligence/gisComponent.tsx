@@ -42,7 +42,8 @@ import {
 
 const formSchema = z.object({
     zoning: z.string(),
-    flood_zone: z.string()
+    flood_zone: z.string(),
+    pd_Overlay_District: z.string()
 });
 
 export default function GISComponent() {
@@ -113,7 +114,6 @@ export default function GISComponent() {
                                             type=""
                                             {...field} />
                                     </FormControl>
-                                    {/* <FormDescription>This is your public display name.</FormDescription> */}
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -135,11 +135,36 @@ export default function GISComponent() {
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="yes">Yes</SelectItem>
+                                            <SelectItem value="yes">100 years</SelectItem>
+                                            <SelectItem value="no">500 years</SelectItem>
+                                            <SelectItem value="no">1000 years</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+
+                    <div className="col-span-4">
+
+                        <FormField
+                            control={form.control}
+                            name="pd_Overlay_District"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>PD Overlay District</FormLabel>
+                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger>
+                                                <SelectValue placeholder="Select an option" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectItem value="yes">Years</SelectItem>
                                             <SelectItem value="no">No</SelectItem>
                                         </SelectContent>
                                     </Select>
-                                    {/* <FormDescription>You can manage email addresses in your email settings.</FormDescription> */}
                                     <FormMessage />
                                 </FormItem>
                             )}

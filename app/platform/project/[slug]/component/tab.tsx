@@ -45,7 +45,7 @@ export function DashboardTabs() {
                     onClick={() => setActiveTab('New Construction')}
                 >
                     <Calculator className="h-4 w-4" />
-                    <span>New Construction (Asumption)</span>
+                    <span>Under Writing</span>
                 </Button>
 
                 {/* <Button
@@ -54,7 +54,7 @@ export function DashboardTabs() {
                     onClick={() => setActiveTab('Renovation')}
                 >
                     <Calculator className="h-4 w-4" />
-                    <span>Rehab (Assumption)</span>
+                    <span>New Construction</span>
                 </Button> */}
 
                 {/* Budget Dropdown */}
