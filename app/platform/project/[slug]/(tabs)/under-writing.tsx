@@ -3,12 +3,44 @@
 import FinalClosing from "./components/underWriting/finalClosing"
 import UnderWritingFinishLevelComponent from "./components/underWriting/finishLevel"
 import PropertyDetailComponent from "./components/underWriting/propertyDetails"
-import SoftCostComponent, { ArchitecturalFeesProps } from "./components/underWriting/softCost"
+import SoftCostComponent from "./components/underWriting/softCost"
 import UnderWritingFinacingComponent from "./components/underWriting/underWritingFinancing"
 import UnderWritingReport from "./components/underWriting/underWritingReport"
 
+export interface UnderWritingProps {
+    architecturalDesignFees: number;
+    setArchitecturalDesignFees: (value: number) => void;
+    landRealEstateCosts: number;
+    setLandRealEstateCosts: (value: number) => void;
+    loanInterestAccountingFees: number;
+    setLoanInterestAccountingFees: (value: number) => void;
+    hardMoney: boolean;
+    setHardMoney: (value: boolean) => void;
+    investorMoney: boolean;
+    setInvestorMoney: (value: boolean) => void;
+    investorEquity: boolean;
+    setInvestorEquity: (value: boolean) => void;
+    loanAmountHM: number;
+    setLoanAmountHM: (value: number) => void;
+    loanAmountIM: number;
+    setLoanAmountIM: (value: number) => void;
+    equity: number;
+    setEquity: (value: number) => void;
+    pointsHM: number;
+    setPointsHM: (value: number) => void;
+    pointsIM: number;
+    setPointsIM: (value: number) => void;
+    arpHM: number;
+    setArpHM: (value: number) => void;
+    arpIM: number;
+    setArpIM: (value: number) => void;
+    adminFeesHM: number;
+    setAdminFeesHM: (value: number) => void;
+    amortization: number;
+    setAmortization: (value: number) => void;
+}
 
-export default function UnderWritingComponent(props: ArchitecturalFeesProps) {
+export default function UnderWritingComponent(props: UnderWritingProps) {
 
     return (
 
@@ -30,7 +62,32 @@ export default function UnderWritingComponent(props: ArchitecturalFeesProps) {
 
                     <UnderWritingFinishLevelComponent />
 
-                    <UnderWritingFinacingComponent />
+                    <UnderWritingFinacingComponent
+                        hardMoney={props.hardMoney}
+                        setHardMoney={props.setHardMoney}
+                        investorMoney={props.investorMoney}
+                        setInvestorMoney={props.setInvestorMoney}
+                        investorEquity={false}
+                        setInvestorEquity={ }
+                        loanAmountHM={0}
+                        setLoanAmountHM={ }
+                        loanAmountIM={0}
+                        setLoanAmountIM={ }
+                        equity={0}
+                        setEquity={ }
+                        pointsHM={0}
+                        setPointsHM={ }
+                        pointsIM={0}
+                        setPointsIM={ }
+                        arpHM={0}
+                        setArpHM={ }
+                        arpIM={0}
+                        setArpIM={ }
+                        adminFeesHM={0}
+                        setAdminFeesHM={ }
+                        amortization={0}
+                        setAmortization={ }
+                    />
 
                     <FinalClosing />
 
