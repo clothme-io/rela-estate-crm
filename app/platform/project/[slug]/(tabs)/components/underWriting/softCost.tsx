@@ -24,25 +24,80 @@ import {
 } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 
+export interface ArchitecturalFeesProps {
+    architecturalDesignFees: number;
+    setArchitecturalDesignFees: (value: number) => void;
+    // inspectionFees: number;
+    // setInspectionFees: (value: number) => void;
+    landRealEstateCosts: number;
+    setLandRealEstateCosts: (value: number) => void;
+    // equipmentRental: number;
+    // setEquipmentRental: (value: number) => void;
+    loanInterestAccountingFees: number;
+    setLoanInterestAccountingFees: (value: number) => void;
+    // projectManagement: number;
+    // setProjectManagement: (value: number) => void;
+    // insuranceProfessionalDues: number;
+    // setInsuranceProfessionalDues: (value: number) => void;
+    // localStateTaxes: number;
+    // setLocalStateTaxes: (value: number) => void;
+    // advertisingPublicRelations: number;
+    // setAdvertisingPublicRelations: (value: number) => void;
+    // additionalWorkStudies: number;
+    // setAdditionalWorkStudies: (value: number) => void;
+}
+
 const formSchema = z.object({
-    architecturalDesignFees: z.string(),
-    inspectionFees: z.string(),
-    landRealEstateCosts: z.string(),
-    equipmentRental: z.string(),
-    loanInterestAccountingFees: z.string(),
-    projectManagement: z.string(),
-    insuranceProfessionalDues: z.string(),
-    localStateTaxes: z.string(),
-    advertisingPublicRelations: z.string(),
-    additionalWorkStudies: z.string(),
+    architecturalDesignFees: z.number(),
+    // inspectionFees: z.number(),
+    landRealEstateCosts: z.number(),
+    // equipmentRental: z.number(),
+    loanInterestAccountingFees: z.number(),
+    // projectManagement: z.number(),
+    // insuranceProfessionalDues: z.number(),
+    localStateTaxes: z.number(),
+    // advertisingPublicRelations: z.number(),
+    // additionalWorkStudies: z.number(),
 });
 
 
-export default function SoftCostComponent() {
+export default function SoftCostComponent({
+    architecturalDesignFees,
+    setArchitecturalDesignFees,
+    // inspectionFees,
+    // setInspectionFees,
+    landRealEstateCosts,
+    setLandRealEstateCosts,
+    // equipmentRental,
+    // setEquipmentRental,
+    loanInterestAccountingFees,
+    setLoanInterestAccountingFees,
+    // projectManagement,
+    // setProjectManagement,
+    // insuranceProfessionalDues,
+    // setInsuranceProfessionalDues,
+    // localStateTaxes,
+    // setLocalStateTaxes,
+    // advertisingPublicRelations,
+    // setAdvertisingPublicRelations,
+    // additionalWorkStudies,
+    // setAdditionalWorkStudies
+}: ArchitecturalFeesProps) {
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-
+        defaultValues: {
+            architecturalDesignFees: architecturalDesignFees,
+            // inspectionFees: inspectionFees,
+            landRealEstateCosts: landRealEstateCosts,
+            // equipmentRental: equipmentRental,
+            loanInterestAccountingFees: loanInterestAccountingFees,
+            // projectManagement: projectManagement,
+            // insuranceProfessionalDues: insuranceProfessionalDues,
+            // localStateTaxes: localStateTaxes,
+            // advertisingPublicRelations: advertisingPublicRelations,
+            // additionalWorkStudies: additionalWorkStudies
+        }
     })
 
     function onSubmit(values: z.infer<typeof formSchema>) {
@@ -82,9 +137,13 @@ export default function SoftCostComponent() {
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
-
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setArchitecturalDesignFees(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -124,9 +183,13 @@ export default function SoftCostComponent() {
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
-
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setLandRealEstateCosts(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -170,9 +233,13 @@ export default function SoftCostComponent() {
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
-
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setLoanInterestAccountingFees(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -193,7 +260,12 @@ export default function SoftCostComponent() {
                                                 placeholder="0"
 
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setLoanInterestAccountingFees(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
