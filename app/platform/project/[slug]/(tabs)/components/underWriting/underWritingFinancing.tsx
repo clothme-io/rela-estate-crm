@@ -28,12 +28,12 @@ import {
 import { Separator } from "@/components/ui/separator"
 
 export interface FinancingProps {
-    hardMoney: number;
-    setHardMoney: (value: number) => void;
-    investorMoney: number;
-    setInvestorMoney: (value: number) => void;
-    investorEquity: number;
-    setInvestorEquity: (value: number) => void;
+    hardMoney: boolean;
+    setHardMoney: (value: boolean) => void;
+    investorMoney: boolean;
+    setInvestorMoney: (value: boolean) => void;
+    investorEquity: boolean;
+    setInvestorEquity: (value: boolean) => void;
     loanAmountHM: number;
     setLoanAmountHM: (value: number) => void;
     loanAmountIM: number;
@@ -58,8 +58,8 @@ const formSchema = z.object({
     hardMoney: z.boolean(),
     investorMoney: z.boolean(),
     investorEquity: z.boolean(),
-    loanAmountHM: z.string(),
-    loanAmountIM: z.string(),
+    loanAmountHM: z.number(),
+    loanAmountIM: z.number(),
     equity: z.string(),
     pointsHM: z.string(),
     pointsIM: z.string(),
@@ -99,9 +99,11 @@ export default function MyForm({
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            hardMoney: false,
-            investorMoney: false,
-            investorEquity: false
+            hardMoney: hardMoney,
+            investorMoney: investorMoney,
+            investorEquity: investorEquity,
+            loanAmountHM: loanAmountHM,
+            loanAmountIM: loanAmountIM,
         }
 
     })

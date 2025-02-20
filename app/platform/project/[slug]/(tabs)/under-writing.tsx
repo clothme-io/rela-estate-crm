@@ -3,12 +3,12 @@
 import FinalClosing from "./components/underWriting/finalClosing"
 import UnderWritingFinishLevelComponent from "./components/underWriting/finishLevel"
 import PropertyDetailComponent from "./components/underWriting/propertyDetails"
-import SoftCostComponent from "./components/underWriting/softCost"
+import SoftCostComponent, { ArchitecturalFeesProps } from "./components/underWriting/softCost"
 import UnderWritingFinacingComponent from "./components/underWriting/underWritingFinancing"
 import UnderWritingReport from "./components/underWriting/underWritingReport"
 
 
-export default function UnderWritingComponent() {
+export default function UnderWritingComponent(props: ArchitecturalFeesProps) {
 
     return (
 
@@ -19,7 +19,14 @@ export default function UnderWritingComponent() {
 
                     <PropertyDetailComponent />
 
-                    <SoftCostComponent />
+                    <SoftCostComponent
+                        architecturalDesignFees={props.architecturalDesignFees}
+                        setArchitecturalDesignFees={props.setArchitecturalDesignFees}
+                        landRealEstateCosts={props.landRealEstateCosts}
+                        setLandRealEstateCosts={props.setLandRealEstateCosts}
+                        loanInterestAccountingFees={props.loanInterestAccountingFees}
+                        setLoanInterestAccountingFees={props.setLoanInterestAccountingFees}
+                    />
 
                     <UnderWritingFinishLevelComponent />
 
