@@ -27,6 +27,33 @@ import {
 } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 
+export interface FinancingProps {
+    hardMoney: number;
+    setHardMoney: (value: number) => void;
+    investorMoney: number;
+    setInvestorMoney: (value: number) => void;
+    investorEquity: number;
+    setInvestorEquity: (value: number) => void;
+    loanAmountHM: number;
+    setLoanAmountHM: (value: number) => void;
+    loanAmountIM: number;
+    setLoanAmountIM: (value: number) => void;
+    equity: number;
+    setEquity: (value: number) => void;
+    pointsHM: number;
+    setPointsHM: (value: number) => void;
+    pointsIM: number;
+    setPointsIM: (value: number) => void;
+    arpHM: number;
+    setArpHM: (value: number) => void;
+    arpIM: number;
+    setArpIM: (value: number) => void;
+    adminFeesHM: number;
+    setAdminFeesHM: (value: number) => void;
+    amortization: number;
+    setAmortization: (value: number) => void;
+}
+
 const formSchema = z.object({
     hardMoney: z.boolean(),
     investorMoney: z.boolean(),
@@ -42,7 +69,32 @@ const formSchema = z.object({
     amortization: z.string()
 });
 
-export default function MyForm() {
+export default function MyForm({
+    hardMoney,
+    setHardMoney,
+    investorMoney,
+    setInvestorMoney,
+    investorEquity,
+    setInvestorEquity,
+    loanAmountHM,
+    setLoanAmountHM,
+    loanAmountIM,
+    setLoanAmountIM,
+    equity,
+    setEquity,
+    pointsHM,
+    setPointsHM,
+    pointsIM,
+    setPointsIM,
+    arpHM,
+    setArpHM,
+    arpIM,
+    setArpIM,
+    adminFeesHM,
+    setAdminFeesHM,
+    amortization,
+    setAmortization
+}: FinancingProps) {
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),

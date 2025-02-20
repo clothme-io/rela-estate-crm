@@ -25,6 +25,45 @@ export function DashboardTabs() {
 
     const [activeTab, setActiveTab] = useState<Tab>('due-diligence')
 
+    // Land States
+    const [landAsking, setLandAsking] = useState<number>(0);
+    const [zoningRight, setZoningRight] = useState<number>(0);
+    const [sqft, setSqft] = useState<number>(0);
+    const [salesComps, setSalesComps] = useState<number>(0);
+    const [rentalComps, setRentalComps] = useState<number>(0);
+    const [unitsProposed, setUnitsProposed] = useState<number>(0);
+
+    // Architectural and Fees States
+    const [architecturalDesignFees, setArchitecturalDesignFees] = useState<number>(0);
+    const [inspectionFees, setInspectionFees] = useState<number>(0);
+    const [landRealEstateCosts, setLandRealEstateCosts] = useState<number>(0);
+    const [equipmentRental, setEquipmentRental] = useState<number>(0);
+    const [loanInterestAccountingFees, setLoanInterestAccountingFees] = useState<number>(0);
+    const [projectManagement, setProjectManagement] = useState<number>(0);
+    const [insuranceProfessionalDues, setInsuranceProfessionalDues] = useState<number>(0);
+    const [localStateTaxes, setLocalStateTaxes] = useState<number>(0);
+    const [advertisingPublicRelations, setAdvertisingPublicRelations] = useState<number>(0);
+    const [additionalWorkStudies, setAdditionalWorkStudies] = useState<number>(0);
+
+    // Financing States
+    const [hardMoney, setHardMoney] = useState<number>(0);
+    const [investorMoney, setInvestorMoney] = useState<number>(0);
+    const [investorEquity, setInvestorEquity] = useState<number>(0);
+    const [loanAmountHM, setLoanAmountHM] = useState<number>(0);
+    const [loanAmountIM, setLoanAmountIM] = useState<number>(0);
+    const [equity, setEquity] = useState<number>(0);
+    const [pointsHM, setPointsHM] = useState<number>(0);
+    const [pointsIM, setPointsIM] = useState<number>(0);
+    const [arpHM, setArpHM] = useState<number>(0);
+    const [arpIM, setArpIM] = useState<number>(0);
+    const [adminFeesHM, setAdminFeesHM] = useState<number>(0);
+    const [amortization, setAmortization] = useState<number>(0);
+
+    // Closing States
+    const [realtorCommission, setRealtorCommission] = useState<number>(0);
+    const [closingCost, setClosingCost] = useState<number>(0);
+    const [afterConstructionValue, setAfterConstructionValue] = useState<number>(0);
+
     return (
         <div className="flex flex-col w-full">
             <nav className="flex items-center gap-4 py-4 bg-white"> {/* border-b */}
