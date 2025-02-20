@@ -24,20 +24,56 @@ import {
 } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 
+export interface PropertyDetailProps {
+    landAsking: number;
+    setLandAsking: (value: number) => void;
+    zoningRight: number;
+    setZoningRight: (value: number) => void;
+    sqft: number;
+    setSqft: (value: number) => void;
+    salesComps: number;
+    setSalesComps: (value: number) => void;
+    rentalComps: number;
+    setRentalComps: (value: number) => void;
+    unitsProposed: number;
+    setUnitsProposed: (value: number) => void;
+}
+
 const formSchema = z.object({
-    landAsking: z.string(),
-    zoningRight: z.string(),
-    sqft: z.string(),
-    salesComps: z.string(),
-    rentalComps: z.string(),
-    unitsProposed: z.string()
+    landAsking: z.number(),
+    zoningRight: z.number(),
+    sqft: z.number(),
+    salesComps: z.number(),
+    rentalComps: z.number(),
+    unitsProposed: z.number()
 });
 
-export default function PropertyDetailComponent() {
+export default function PropertyDetailComponent({
+    landAsking,
+    setLandAsking,
+    zoningRight,
+    setZoningRight,
+    sqft,
+    setSqft,
+    salesComps,
+    setSalesComps,
+    rentalComps,
+    setRentalComps,
+    unitsProposed,
+    setUnitsProposed
+
+}: PropertyDetailProps) {
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-
+        defaultValues: {
+            landAsking: landAsking,
+            zoningRight: zoningRight,
+            sqft: sqft,
+            salesComps: salesComps,
+            rentalComps: rentalComps,
+            unitsProposed: unitsProposed
+        }
     })
 
     function onSubmit(values: z.infer<typeof formSchema>) {
@@ -77,9 +113,13 @@ export default function PropertyDetailComponent() {
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
-
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setLandAsking(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -98,9 +138,13 @@ export default function PropertyDetailComponent() {
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
-
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setZoningRight(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -123,9 +167,13 @@ export default function PropertyDetailComponent() {
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
-
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setSqft(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -144,9 +192,13 @@ export default function PropertyDetailComponent() {
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
-
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setSalesComps(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -169,9 +221,13 @@ export default function PropertyDetailComponent() {
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
-
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setRentalComps(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -190,9 +246,13 @@ export default function PropertyDetailComponent() {
                                         <FormControl>
                                             <Input
                                                 placeholder="0"
-
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setUnitsProposed(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>

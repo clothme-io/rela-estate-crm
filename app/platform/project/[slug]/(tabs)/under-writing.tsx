@@ -38,6 +38,20 @@ export interface UnderWritingProps {
     setAdminFeesHM: (value: number) => void;
     amortization: number;
     setAmortization: (value: number) => void;
+
+    // 
+    landAsking: number;
+    setLandAsking: (value: number) => void;
+    zoningRight: number;
+    setZoningRight: (value: number) => void;
+    sqft: number;
+    setSqft: (value: number) => void;
+    salesComps: number;
+    setSalesComps: (value: number) => void;
+    rentalComps: number;
+    setRentalComps: (value: number) => void;
+    unitsProposed: number;
+    setUnitsProposed: (value: number) => void;
 }
 
 export default function UnderWritingComponent(props: UnderWritingProps) {
@@ -49,7 +63,20 @@ export default function UnderWritingComponent(props: UnderWritingProps) {
             <div className="grid grid-cols-12 gap-2">
                 <div className="col-span-8">
 
-                    <PropertyDetailComponent />
+                    <PropertyDetailComponent
+                        landAsking={props.landAsking}
+                        setLandAsking={props.setLandAsking}
+                        zoningRight={props.zoningRight}
+                        setZoningRight={props.setZoningRight}
+                        sqft={props.sqft}
+                        setSqft={props.setSqft}
+                        salesComps={props.salesComps}
+                        setSalesComps={props.setSalesComps}
+                        rentalComps={props.rentalComps}
+                        setRentalComps={props.setRentalComps}
+                        unitsProposed={props.unitsProposed}
+                        setUnitsProposed={props.setUnitsProposed}
+                    />
 
                     <SoftCostComponent
                         architecturalDesignFees={props.architecturalDesignFees}
@@ -67,26 +94,26 @@ export default function UnderWritingComponent(props: UnderWritingProps) {
                         setHardMoney={props.setHardMoney}
                         investorMoney={props.investorMoney}
                         setInvestorMoney={props.setInvestorMoney}
-                        investorEquity={false}
-                        setInvestorEquity={ }
-                        loanAmountHM={0}
-                        setLoanAmountHM={ }
-                        loanAmountIM={0}
-                        setLoanAmountIM={ }
-                        equity={0}
-                        setEquity={ }
-                        pointsHM={0}
-                        setPointsHM={ }
-                        pointsIM={0}
-                        setPointsIM={ }
-                        arpHM={0}
-                        setArpHM={ }
-                        arpIM={0}
-                        setArpIM={ }
-                        adminFeesHM={0}
-                        setAdminFeesHM={ }
-                        amortization={0}
-                        setAmortization={ }
+                        investorEquity={props.investorEquity}
+                        setInvestorEquity={props.setInvestorEquity}
+                        loanAmountHM={props.loanAmountHM}
+                        setLoanAmountHM={props.setLoanAmountHM}
+                        loanAmountIM={props.loanAmountIM}
+                        setLoanAmountIM={props.setLoanAmountIM}
+                        equity={props.equity}
+                        setEquity={props.setEquity}
+                        pointsHM={props.pointsHM}
+                        setPointsHM={props.setPointsHM}
+                        pointsIM={props.pointsIM}
+                        setPointsIM={props.setPointsIM}
+                        arpHM={props.arpHM}
+                        setArpHM={props.setArpHM}
+                        arpIM={props.arpIM}
+                        setArpIM={props.setArpIM}
+                        adminFeesHM={props.adminFeesHM}
+                        setAdminFeesHM={props.setAdminFeesHM}
+                        amortization={props.amortization}
+                        setAmortization={props.setAmortization}
                     />
 
                     <FinalClosing />
