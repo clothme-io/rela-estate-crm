@@ -60,13 +60,13 @@ const formSchema = z.object({
     investorEquity: z.boolean(),
     loanAmountHM: z.number(),
     loanAmountIM: z.number(),
-    equity: z.string(),
-    pointsHM: z.string(),
-    pointsIM: z.string(),
-    arpHM: z.string(),
-    arpIM: z.string(),
-    adminFeesHM: z.string(),
-    amortization: z.string()
+    equity: z.number(),
+    pointsHM: z.number(),
+    pointsIM: z.number(),
+    arpHM: z.number(),
+    arpIM: z.number(),
+    adminFeesHM: z.number(),
+    amortization: z.number()
 });
 
 export default function MyForm({
@@ -104,6 +104,13 @@ export default function MyForm({
             investorEquity: investorEquity,
             loanAmountHM: loanAmountHM,
             loanAmountIM: loanAmountIM,
+            equity: equity,
+            pointsHM: pointsHM,
+            pointsIM: pointsIM,
+            arpHM: arpHM,
+            arpIM: arpIM,
+            adminFeesHM: adminFeesHM,
+            amortization: amortization
         }
 
     })
@@ -146,7 +153,10 @@ export default function MyForm({
                                     <FormControl>
                                         <Switch
                                             checked={field.value}
-                                            onCheckedChange={field.onChange}
+                                            onCheckedChange={(checked) => {
+                                                setHardMoney(checked);
+                                                field.onChange(checked);
+                                            }}
                                             aria-readonly
                                         />
                                     </FormControl>
@@ -168,7 +178,10 @@ export default function MyForm({
                                     <FormControl>
                                         <Switch
                                             checked={field.value}
-                                            onCheckedChange={field.onChange}
+                                            onCheckedChange={(checked) => {
+                                                setInvestorMoney(checked);
+                                                field.onChange(checked);
+                                            }}
                                             aria-readonly
                                         />
                                     </FormControl>
@@ -190,7 +203,10 @@ export default function MyForm({
                                     <FormControl>
                                         <Switch
                                             checked={field.value}
-                                            onCheckedChange={field.onChange}
+                                            onCheckedChange={(checked) => {
+                                                setInvestorEquity(checked);
+                                                field.onChange(checked);
+                                            }}
                                             aria-readonly
                                         />
                                     </FormControl>
@@ -214,9 +230,13 @@ export default function MyForm({
                                     <FormControl>
                                         <Input
                                             placeholder="0"
-
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setLoanAmountHM(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormDescription>Building Budget</FormDescription>
                                     <FormMessage />
@@ -236,9 +256,13 @@ export default function MyForm({
                                     <FormControl>
                                         <Input
                                             placeholder="0"
-
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setLoanAmountIM(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormDescription>Remaining</FormDescription>
                                     <FormMessage />
@@ -258,9 +282,13 @@ export default function MyForm({
                                     <FormControl>
                                         <Input
                                             placeholder="0"
-
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setEquity(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -284,7 +312,12 @@ export default function MyForm({
                                         <Input
                                             placeholder="0"
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setPointsHM(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -304,7 +337,12 @@ export default function MyForm({
                                         <Input
                                             placeholder="0"
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setPointsIM(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -349,7 +387,12 @@ export default function MyForm({
                                         <Input
                                             placeholder="0"
                                             type=""
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setArpHM(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -369,7 +412,12 @@ export default function MyForm({
                                         <Input
                                             placeholder="0"
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setArpIM(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -415,7 +463,12 @@ export default function MyForm({
                                         <Input
                                             placeholder="0"
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setAdminFeesHM(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -435,7 +488,12 @@ export default function MyForm({
                                         <Input
                                             placeholder="0"
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setAmortization(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
