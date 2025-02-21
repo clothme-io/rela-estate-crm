@@ -15,10 +15,10 @@ const firebaseConfig = {
 };
 
 // const firebaseCValues = JSON.stringify(process.env.NEXT_PUBLIC_FIREBASE || {});
-const firebaseEnvString = process.env.NEXT_PUBLIC_FIREBASE_STRING as string;
-const myEnvArray = firebaseEnvString.split("|");
-console.log("myEnvArray =====", myEnvArray)
-console.log("myEnvArray[0] =====", `${myEnvArray[0]}`)
+// const firebaseEnvString = process.env.NEXT_PUBLIC_FIREBASE_STRING as string;
+// const myEnvArray = firebaseEnvString.split("|");
+// console.log("myEnvArray =====", myEnvArray)
+// console.log("myEnvArray[0] =====", `${myEnvArray[0]}`)
 // const firebaseConfig = {
 //   apiKey: `${myEnvArray[0]}`,
 //   authDomain: `${myEnvArray[1]}`,
