@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import { ProjectTable } from "./components/project-table"
 import { ProjectHeader } from "./components/project-header"
 
@@ -15,14 +15,14 @@ export interface ProjectPageProps {
 
 export default function ProjectPage() {
 
-    const [propertyAddress, setPropertyAddress] = useState<ProjectPageProps>({
-        streetNumber: '',
-        streetName: '',
-        city: '',
-        state: '',
-        zip: '',
-        country: ''
-    });
+    // const [propertyAddress, setPropertyAddress] = useState<ProjectPageProps>({
+    //     streetNumber: '',
+    //     streetName: '',
+    //     city: '',
+    //     state: '',
+    //     zip: '',
+    //     country: ''
+    // });
 
     return (
         <div className="flex flex-col gap-6 py-16 px-48">

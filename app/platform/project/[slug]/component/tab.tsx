@@ -25,6 +25,17 @@ export function DashboardTabs() {
 
     const [activeTab, setActiveTab] = useState<Tab>('due-diligence')
 
+    const [zoning, setZoning] = useState<number>(0);
+    const [floodZone, setfloodZone] = useState<string>('');
+    const [pdOverlayDistrict, setpdOverlayDistrict] = useState<string>('');
+
+    const [sideWidth, setSideWidth] = useState<number>(0);
+    const [sideDepth, setsideDepth] = useState<number>(0);
+    const [area, setarea] = useState<number>(0);
+    const [lot, setlot] = useState<number>(0);
+    const [block, setblock] = useState<number>(0);
+    const [frequentlyTraded, setfrequentlyTraded] = useState<string>('');
+
     // Land States
     const [landAsking, setLandAsking] = useState<number>(0);
     const [zoningRight, setZoningRight] = useState<number>(0);
@@ -149,7 +160,18 @@ export function DashboardTabs() {
 
             {/* Content area - can be populated based on selected tab */}
             <div className="">
-                {activeTab === 'due-diligence' && <LandDueDiligence />}
+                {activeTab === 'due-diligence' && <LandDueDiligence
+                    zoning={zoning} setZoning={setZoning}
+                    floodZone={floodZone} setfloodZone={setfloodZone}
+                    pdOverlayDistrict={pdOverlayDistrict} setpdOverlayDistrict={setpdOverlayDistrict}
+                    sideWidth={sideWidth} setSideWidth={setSideWidth}
+                    sideDepth={sideDepth} setsideDepth={setsideDepth}
+                    area={area} setarea={setarea}
+                    lot={lot} setlot={setlot}
+                    block={block} setblock={setblock}
+                    frequentlyTraded={frequentlyTraded} setfrequentlyTraded={setfrequentlyTraded}
+                />}
+
                 {activeTab === 'New Construction' && <UnderWritingComponent
                     architecturalDesignFees={architecturalDesignFees} setArchitecturalDesignFees={setArchitecturalDesignFees}
                     landRealEstateCosts={landRealEstateCosts} setLandRealEstateCosts={setLandRealEstateCosts}

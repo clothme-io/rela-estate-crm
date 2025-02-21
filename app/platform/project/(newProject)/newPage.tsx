@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
@@ -7,7 +8,7 @@ import {
 import {
     useForm
 } from "react-hook-form"
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState, useRef, useCallback } from "react"
 import { useLoadScript } from "@react-google-maps/api"
 import {
     zodResolver
@@ -29,11 +30,11 @@ import { Plus } from "lucide-react"
 import {
     Form,
     FormControl,
-    FormDescription,
+    // FormDescription,
     FormField,
     FormItem,
     FormLabel,
-    FormMessage,
+    // FormMessage,
 } from "@/components/ui/form"
 
 const formSchema = z.object({
@@ -81,7 +82,7 @@ export function NewProjectDialog() {
         setInput((values) => ({ ...values, [name]: value }));
     }
 
-    const handlePlaceChanged = async (address: any) => {
+    const handlePlaceChanged = useCallback(async (address: any) => {
         if (!isLoaded) return;
         const place = address.getPlace();
 
@@ -91,7 +92,7 @@ export function NewProjectDialog() {
         }
 
         formData(place);
-    }
+    }, [isLoaded]);
 
     const formData = (data: { address_components: any; geometry: { location: { lat: () => any; lng: () => any } } }) => {
         const addressComponents = data?.address_components;
