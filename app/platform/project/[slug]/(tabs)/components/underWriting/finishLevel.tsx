@@ -26,18 +26,23 @@ import { Separator } from "@/components/ui/separator"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 
+export interface UnderWritingFinishLevelProps {
+    finish: number;
+    setfinish: (value: number) => void;
+}
+
 const formSchema = z.object({
-    finish: z.string()
+    finish: z.number()
 });
 
-export default function UnderWritingFinishLevelComponent() {
+export default function UnderWritingFinishLevelComponent({ finish, setfinish }: UnderWritingFinishLevelProps) {
 
     const [selectedLevel, setSelectedLevel] = useState("");
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            finish: selectedLevel
+            finish: finish
         }
 
     })
@@ -88,7 +93,12 @@ export default function UnderWritingFinishLevelComponent() {
                                             <Input
                                                 placeholder="0"
                                                 type="number"
-                                                {...field} />
+                                                {...field}
+                                                onChange={(e) => {
+                                                    setfinish(e.currentTarget.value.length);
+                                                    field.onChange(e);
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
