@@ -41,27 +41,27 @@ import {
 } from "@/components/ui/card"
 
 export interface AppraisalComponentProps {
-    sideWidth: string;
-    setSideWidth: (value: string) => void;
-    sideDepth: string;
-    setsideDepth: (value: string) => void;
-    area: string;
-    setarea: (value: string) => void;
-    lot: string;
-    setlot: (value: string) => void;
-    block: string;
-    setblock: (value: string) => void;
+    sideWidth: number;
+    setSideWidth: (value: number) => void;
+    sideDepth: number;
+    setsideDepth: (value: number) => void;
+    area: number;
+    setarea: (value: number) => void;
+    lot: number;
+    setlot: (value: number) => void;
+    block: number;
+    setblock: (value: number) => void;
     // deedTransfer: z.coerce.date(),
     frequentlyTraded: string;
     setfrequentlyTraded: (value: string) => void;
 }
 
 const formSchema = z.object({
-    sideWidth: z.string(),
-    sideDepth: z.string(),
-    area: z.string(),
-    lot: z.string(),
-    block: z.string(),
+    sideWidth: z.number(),
+    sideDepth: z.number(),
+    area: z.number(),
+    lot: z.number(),
+    block: z.number(),
     deedTransfer: z.coerce.date(),
     frequentlyTraded: z.string()
 });
@@ -159,9 +159,13 @@ export default function AppraisalComponent({
                                     <FormControl>
                                         <Input
                                             placeholder="0"
-
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setSideWidth(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -180,9 +184,13 @@ export default function AppraisalComponent({
                                     <FormControl>
                                         <Input
                                             placeholder="0"
-
                                             type=""
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setsideDepth(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -201,9 +209,13 @@ export default function AppraisalComponent({
                                     <FormControl>
                                         <Input
                                             placeholder="0"
-
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setarea(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -229,7 +241,12 @@ export default function AppraisalComponent({
                                             placeholder="0"
 
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setlot(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -248,9 +265,13 @@ export default function AppraisalComponent({
                                     <FormControl>
                                         <Input
                                             placeholder="0"
-
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setblock(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -266,7 +287,11 @@ export default function AppraisalComponent({
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Frequently traded</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <Select onValueChange={(e) => {
+                                        setfrequentlyTraded(e)
+                                        field.onChange(e)
+                                    }} defaultValue={field.value}
+                                    >
                                         <FormControl>
                                             <SelectTrigger>
                                                 <SelectValue placeholder="Select an option..." />
