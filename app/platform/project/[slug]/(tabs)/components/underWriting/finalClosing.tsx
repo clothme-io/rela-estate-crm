@@ -23,18 +23,38 @@ import {
 } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 
+export interface FinalClosingProps {
+    realtorCommission: number;
+    setRealtorCommission: (value: number) => void;
+    closingCost: number;
+    setClosingCost: (value: number) => void;
+    afterConstructionValue: number;
+    setAfterConstructionValue: (value: number) => void;
+}
+
 const formSchema = z.object({
-    realtorCommission: z.string(),
-    closingCost: z.string(),
-    afterConstructionValue: z.string()
+    realtorCommission: z.number(),
+    closingCost: z.number(),
+    afterConstructionValue: z.number()
 });
 
-export default function FinalClosing() {
+export default function FinalClosingComponent({
+    realtorCommission,
+    setRealtorCommission,
+    closingCost,
+    setClosingCost,
+    afterConstructionValue,
+    setAfterConstructionValue
+}: FinalClosingProps) {
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-
-    })
+        defaultValues: {
+            realtorCommission: realtorCommission,
+            closingCost: closingCost,
+            afterConstructionValue: afterConstructionValue
+        }
+    });
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         try {
@@ -73,7 +93,12 @@ export default function FinalClosing() {
                                         <Input
                                             placeholder="0"
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setRealtorCommission(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -93,7 +118,12 @@ export default function FinalClosing() {
                                         <Input
                                             placeholder="0"
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setClosingCost(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -112,9 +142,13 @@ export default function FinalClosing() {
                                     <FormControl>
                                         <Input
                                             placeholder="0"
-
                                             type="number"
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setAfterConstructionValue(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

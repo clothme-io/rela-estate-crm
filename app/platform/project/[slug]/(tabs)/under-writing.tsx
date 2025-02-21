@@ -39,6 +39,10 @@ export interface UnderWritingProps {
     amortization: number;
     setAmortization: (value: number) => void;
 
+    //
+    finish: number;
+    setfinish: (value: number) => void;
+
     // 
     landAsking: number;
     setLandAsking: (value: number) => void;
@@ -52,6 +56,14 @@ export interface UnderWritingProps {
     setRentalComps: (value: number) => void;
     unitsProposed: number;
     setUnitsProposed: (value: number) => void;
+
+    // 
+    realtorCommission: number;
+    setRealtorCommission: (value: number) => void;
+    closingCost: number;
+    setClosingCost: (value: number) => void;
+    afterConstructionValue: number;
+    setAfterConstructionValue: (value: number) => void;
 }
 
 export default function UnderWritingComponent(props: UnderWritingProps) {
@@ -87,7 +99,10 @@ export default function UnderWritingComponent(props: UnderWritingProps) {
                         setLoanInterestAccountingFees={props.setLoanInterestAccountingFees}
                     />
 
-                    <UnderWritingFinishLevelComponent />
+                    <UnderWritingFinishLevelComponent
+                        finish={props.finish}
+                        setfinish={props.setfinish}
+                    />
 
                     <UnderWritingFinacingComponent
                         hardMoney={props.hardMoney}
@@ -116,7 +131,14 @@ export default function UnderWritingComponent(props: UnderWritingProps) {
                         setAmortization={props.setAmortization}
                     />
 
-                    <FinalClosing />
+                    <FinalClosing
+                        realtorCommission={props.realtorCommission}
+                        setRealtorCommission={props.setRealtorCommission}
+                        closingCost={props.closingCost}
+                        setClosingCost={props.setClosingCost}
+                        afterConstructionValue={props.afterConstructionValue}
+                        setAfterConstructionValue={props.setAfterConstructionValue}
+                    />
 
                 </div>
 

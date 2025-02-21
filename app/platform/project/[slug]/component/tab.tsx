@@ -35,20 +35,21 @@ export function DashboardTabs() {
 
     // Architectural and Fees States
     const [architecturalDesignFees, setArchitecturalDesignFees] = useState<number>(0);
-    const [inspectionFees, setInspectionFees] = useState<number>(0);
+    // const [inspectionFees, setInspectionFees] = useState<number>(0);
     const [landRealEstateCosts, setLandRealEstateCosts] = useState<number>(0);
-    const [equipmentRental, setEquipmentRental] = useState<number>(0);
+    // const [equipmentRental, setEquipmentRental] = useState<number>(0);
     const [loanInterestAccountingFees, setLoanInterestAccountingFees] = useState<number>(0);
-    const [projectManagement, setProjectManagement] = useState<number>(0);
-    const [insuranceProfessionalDues, setInsuranceProfessionalDues] = useState<number>(0);
-    const [localStateTaxes, setLocalStateTaxes] = useState<number>(0);
-    const [advertisingPublicRelations, setAdvertisingPublicRelations] = useState<number>(0);
-    const [additionalWorkStudies, setAdditionalWorkStudies] = useState<number>(0);
+    // const [projectManagement, setProjectManagement] = useState<number>(0);
+    // const [insuranceProfessionalDues, setInsuranceProfessionalDues] = useState<number>(0);
+    // const [localStateTaxes, setLocalStateTaxes] = useState<number>(0);
+    // const [advertisingPublicRelations, setAdvertisingPublicRelations] = useState<number>(0);
+    // 
+    const [finish, setfinish] = useState<number>(0);
 
     // Financing States
-    const [hardMoney, setHardMoney] = useState<number>(0);
-    const [investorMoney, setInvestorMoney] = useState<number>(0);
-    const [investorEquity, setInvestorEquity] = useState<number>(0);
+    const [hardMoney, setHardMoney] = useState<boolean>(false);
+    const [investorMoney, setInvestorMoney] = useState<boolean>(false);
+    const [investorEquity, setInvestorEquity] = useState<boolean>(false);
     const [loanAmountHM, setLoanAmountHM] = useState<number>(0);
     const [loanAmountIM, setLoanAmountIM] = useState<number>(0);
     const [equity, setEquity] = useState<number>(0);
@@ -149,7 +150,33 @@ export function DashboardTabs() {
             {/* Content area - can be populated based on selected tab */}
             <div className="">
                 {activeTab === 'due-diligence' && <LandDueDiligence />}
-                {activeTab === 'New Construction' && <UnderWritingComponent />}
+                {activeTab === 'New Construction' && <UnderWritingComponent
+                    architecturalDesignFees={architecturalDesignFees} setArchitecturalDesignFees={setArchitecturalDesignFees}
+                    landRealEstateCosts={landRealEstateCosts} setLandRealEstateCosts={setLandRealEstateCosts}
+                    loanInterestAccountingFees={loanInterestAccountingFees} setLoanInterestAccountingFees={setLoanInterestAccountingFees}
+                    hardMoney={hardMoney} setHardMoney={setHardMoney}
+                    investorMoney={investorMoney} setInvestorMoney={setInvestorMoney}
+                    investorEquity={investorEquity} setInvestorEquity={setInvestorEquity}
+                    loanAmountHM={loanAmountHM} setLoanAmountHM={setLoanAmountHM}
+                    loanAmountIM={loanAmountIM} setLoanAmountIM={setLoanAmountIM}
+                    equity={equity} setEquity={setEquity}
+                    pointsHM={pointsHM} setPointsHM={setPointsHM}
+                    pointsIM={pointsIM} setPointsIM={setPointsIM}
+                    arpHM={arpHM} setArpHM={setArpHM}
+                    arpIM={arpIM} setArpIM={setArpIM}
+                    adminFeesHM={adminFeesHM} setAdminFeesHM={setAdminFeesHM}
+                    amortization={amortization} setAmortization={setAmortization}
+                    finish={finish} setfinish={setfinish}
+                    landAsking={landAsking} setLandAsking={setLandAsking}
+                    zoningRight={zoningRight} setZoningRight={setZoningRight}
+                    sqft={sqft} setSqft={setSqft}
+                    salesComps={salesComps} setSalesComps={setSalesComps}
+                    rentalComps={rentalComps} setRentalComps={setRentalComps}
+                    unitsProposed={unitsProposed} setUnitsProposed={setUnitsProposed}
+                    realtorCommission={realtorCommission} setRealtorCommission={setRealtorCommission}
+                    closingCost={closingCost} setClosingCost={setClosingCost}
+                    afterConstructionValue={afterConstructionValue} setAfterConstructionValue={setAfterConstructionValue}
+                />}
                 {activeTab === 'Renovation' && <div>Budget Content</div>}
                 {activeTab === 'project-management' && <div>Project Management Content</div>}
                 {activeTab === 'gis-map' && <div>GIS Map Content</div>}
