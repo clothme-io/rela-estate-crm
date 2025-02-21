@@ -40,6 +40,22 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
+export interface AppraisalComponentProps {
+    sideWidth: string;
+    setSideWidth: (value: string) => void;
+    sideDepth: string;
+    setsideDepth: (value: string) => void;
+    area: string;
+    setarea: (value: string) => void;
+    lot: string;
+    setlot: (value: string) => void;
+    block: string;
+    setblock: (value: string) => void;
+    // deedTransfer: z.coerce.date(),
+    frequentlyTraded: string;
+    setfrequentlyTraded: (value: string) => void;
+}
+
 const formSchema = z.object({
     sideWidth: z.string(),
     sideDepth: z.string(),
@@ -50,12 +66,32 @@ const formSchema = z.object({
     frequentlyTraded: z.string()
 });
 
-export default function AppraisalComponent() {
+export default function AppraisalComponent({
+    sideWidth,
+    setSideWidth,
+    sideDepth,
+    setsideDepth,
+    area,
+    setarea,
+    lot,
+    setlot,
+    block,
+    setblock,
+    // deedTransfer: z.coerce.date(),
+    frequentlyTraded,
+    setfrequentlyTraded
+}: AppraisalComponentProps) {
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            "deedTransfer": new Date()
+            "deedTransfer": new Date(),
+            sideWidth: sideWidth,
+            sideDepth: sideDepth,
+            area: area,
+            lot: lot,
+            block: block,
+            frequentlyTraded: frequentlyTraded,
         },
     })
 

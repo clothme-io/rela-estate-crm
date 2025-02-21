@@ -40,18 +40,38 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
+export interface GISComponentProps {
+    zoning: number;
+    setZoning: (value: number) => void;
+    floodZone: string;
+    setfloodZone: (value: string) => void;
+    pdOverlayDistrict: string;
+    setpdOverlayDistrict: (value: string) => void;
+}
+
 const formSchema = z.object({
-    zoning: z.string(),
-    flood_zone: z.string(),
-    pd_Overlay_District: z.string()
+    zoning: z.number(),
+    floodZone: z.string(),
+    pdOverlayDistrict: z.string()
 });
 
-export default function GISComponent() {
+export default function GISComponent({
+    zoning,
+    setZoning,
+    floodZone,
+    setfloodZone,
+    pdOverlayDistrict,
+    setpdOverlayDistrict
+}: GISComponentProps) {
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-
-    })
+        defaultValues: {
+            zoning: zoning,
+            floodZone: floodZone,
+            pdOverlayDistrict: pdOverlayDistrict
+        }
+    });
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         try {
@@ -110,9 +130,13 @@ export default function GISComponent() {
                                     <FormControl>
                                         <Input
                                             placeholder=""
-
                                             type=""
-                                            {...field} />
+                                            {...field}
+                                            onChange={(e) => {
+                                                setZoning(e.currentTarget.value.length);
+                                                field.onChange(e);
+                                            }}
+                                        />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -124,11 +148,15 @@ export default function GISComponent() {
 
                         <FormField
                             control={form.control}
-                            name="flood_zone"
+                            name="floodZone"
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>Flood Zone</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <Select onValueChange={(e) => {
+                                        setfloodZone(e)
+                                        field.onChange(e)
+                                    }} defaultValue={field.value}
+                                    >
                                         <FormControl>
                                             <SelectTrigger>
                                                 <SelectValue placeholder="Select an option" />
@@ -150,14 +178,18 @@ export default function GISComponent() {
 
                         <FormField
                             control={form.control}
-                            name="pd_Overlay_District"
+                            name="pdOverlayDistrict"
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel>PD Overlay District</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <Select onValueChange={(e) => {
+                                        setpdOverlayDistrict(e)
+                                        field.onChange(e)
+                                    }} defaultValue={field.value}
+                                    >
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select an option" />
+                                                <SelectValue placeholder="Select an option" defaultValue={field.value} />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
