@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getAnalytics, isSupported } from "firebase/analytics";
 // Supabase
-import { createClient } from '@supabase/supabase-js'
+// import { createClient } from '@supabase/supabase-js'
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -36,14 +36,16 @@ export const auth = getAuth(app);
 export const analytics = isSupported().then(yes => yes ? getAnalytics(app) : null);
 
 // Supabse Client
-const SUPABASE_STRING = process.env.NEXT_PUBLIC_SUPABASE_STRING as string;
-const supabaseArray = SUPABASE_STRING.split("|");
-const supabaseKey = `${supabaseArray[0]}`;
-const supabaseUrl = `${supabaseArray[1]}`;
-if (!supabaseKey) {
-  throw new Error("Missing Supabase key");
-};
-if (!supabaseUrl) {
-  throw new Error("Missing supabaseUrl");
-}
-export const supabase = createClient(supabaseUrl, supabaseKey);
+// const SUPABASE_STRING = process.env.NEXT_PUBLIC_SUPABASE_STRING as string;
+// const supabaseArray = SUPABASE_STRING.split("|");
+// const supabaseKey = `${supabaseArray[0]}`;
+// const supabaseUrl = `${supabaseArray[1]}`;
+// const supabaseKey = "";
+// const supabaseUrl = `2`;
+// if (!supabaseKey) {
+//   throw new Error("Missing Supabase key");
+// };
+// if (!supabaseUrl) {
+//   throw new Error("Missing supabaseUrl");
+// }
+// export const supabase = createClient(supabaseUrl, supabaseKey);
