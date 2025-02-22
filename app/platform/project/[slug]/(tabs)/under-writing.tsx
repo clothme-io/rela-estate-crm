@@ -1,11 +1,13 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import FinalClosing from "./components/underWriting/finalClosing"
 import UnderWritingFinishLevelComponent from "./components/underWriting/finishLevel"
 import PropertyDetailComponent from "./components/underWriting/propertyDetails"
 import SoftCostComponent from "./components/underWriting/softCost"
 import UnderWritingFinacingComponent from "./components/underWriting/underWritingFinancing"
 import UnderWritingReport from "./components/underWriting/underWritingReport"
+import { Printer } from "lucide-react"
 
 export interface UnderWritingProps {
     architecturalDesignFees: number;
@@ -72,6 +74,11 @@ export default function UnderWritingComponent(props: UnderWritingProps) {
 
         <>
             {/* <div className="flex gap-7 pb-10"> */}
+            <div className="flex flex-row-reverse">
+                <Button variant="ghost" size="icon" title="Print">
+                    <Printer className="h-4 w-4" />
+                </Button>
+            </div>
             <div className="grid grid-cols-12 gap-2">
                 <div className="col-span-8">
 

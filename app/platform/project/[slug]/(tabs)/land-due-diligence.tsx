@@ -1,8 +1,10 @@
+import { Button } from "@/components/ui/button";
 import AppraisalComponent from "./components/landDueDeligence/appraisal";
 import CheckListComponent from "./components/landDueDeligence/check-list";
 import GISComponent from "./components/landDueDeligence/gisComponent";
 import ZoningDistrictComponent from "./components/landDueDeligence/zoning-district";
 import ZoningUseComponent from "./components/landDueDeligence/zoning-use";
+import { Printer } from "lucide-react";
 
 export interface LandDueDiligenceProps {
     zoning: number;
@@ -32,32 +34,39 @@ export interface LandDueDiligenceProps {
 export default function LandDueDiligence(props: LandDueDiligenceProps) {
 
     return (
-        <div className="">
+        <>
+            <div className="flex flex-row-reverse">
+                <Button variant="ghost" size="icon" title="Print">
+                    <Printer className="h-4 w-4" />
+                </Button>
+            </div>
+            <div className="">
 
-            <GISComponent
-                zoning={props.zoning}
-                setZoning={props.setZoning}
-                floodZone={props.floodZone}
-                setfloodZone={props.setfloodZone}
-                pdOverlayDistrict={props.pdOverlayDistrict}
-                setpdOverlayDistrict={props.setpdOverlayDistrict}
-            />
+                <GISComponent
+                    zoning={props.zoning}
+                    setZoning={props.setZoning}
+                    floodZone={props.floodZone}
+                    setfloodZone={props.setfloodZone}
+                    pdOverlayDistrict={props.pdOverlayDistrict}
+                    setpdOverlayDistrict={props.setpdOverlayDistrict}
+                />
 
-            <AppraisalComponent
-                sideWidth={props.sideWidth} setSideWidth={props.setSideWidth}
-                sideDepth={props.sideDepth} setsideDepth={props.setsideDepth}
-                area={props.area} setarea={props.setarea}
-                lot={props.lot} setlot={props.setlot}
-                block={props.block} setblock={props.setblock}
-                frequentlyTraded={props.frequentlyTraded} setfrequentlyTraded={props.setfrequentlyTraded} />
+                <AppraisalComponent
+                    sideWidth={props.sideWidth} setSideWidth={props.setSideWidth}
+                    sideDepth={props.sideDepth} setsideDepth={props.setsideDepth}
+                    area={props.area} setarea={props.setarea}
+                    lot={props.lot} setlot={props.setlot}
+                    block={props.block} setblock={props.setblock}
+                    frequentlyTraded={props.frequentlyTraded} setfrequentlyTraded={props.setfrequentlyTraded} />
 
-            <ZoningUseComponent />
+                <ZoningUseComponent />
 
-            <ZoningDistrictComponent />
+                <ZoningDistrictComponent />
 
-            <CheckListComponent />
+                <CheckListComponent />
 
-        </div>
+            </div>
+        </>
     )
 
 }
